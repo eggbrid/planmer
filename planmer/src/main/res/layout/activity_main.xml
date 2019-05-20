@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@color/colorffffff"
+        android:layout_height="match_parent">
+
+
+
+
+    <View
+            android:id="@+id/bottomLine"
+            android:layout_above="@+id/bottomTab"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:background="@color/app_normal_color"/>
+
+    <RadioGroup
+            android:layout_alignParentBottom="true"
+            android:id="@+id/bottomTab"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:background="@color/colorffffff"
+            android:orientation="horizontal"
+            android:gravity="bottom"
+            android:layout_height="60dp">
+        <RadioButton
+                android:id="@+id/Home"
+                android:text="首页"
+                android:layout_weight="1"
+                android:layout_marginRight="60dp"
+                android:button="@null"
+                android:textColor="@color/home_selected_color"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_home_calander"
+                android:background="@null"
+                android:checked="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <RadioButton
+                android:id="@+id/user"
+                android:text="首页"
+                android:layout_marginLeft="60dp"
+                android:button="@null"
+                android:textColor="@color/home_selected_color"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:drawableTop="@drawable/ic_home_user"
+                android:background="@null"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RadioGroup>
+    <TextView
+            android:id="@+id/Add"
+            android:button="@null"
+            android:textColor="@color/home_selected_color"
+            android:background="@drawable/selector_ic_home_add"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:checked="true"
+
+            android:layout_width="120dp"
+            android:layout_height="120dp"/>
+
+
+</RelativeLayout>
