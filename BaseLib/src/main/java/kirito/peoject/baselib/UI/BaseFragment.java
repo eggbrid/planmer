@@ -72,7 +72,7 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
         view.initView();
         afterInitView(view);
         initData();
-        return super.onCreateView(inflater, container, savedInstanceState);
+        return fv;
     }
 
     /**

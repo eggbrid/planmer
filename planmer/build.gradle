@@ -27,4 +27,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(path: ':BaseLib')
     implementation 'androidx.appcompat:appcompat:1.0.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
+    implementation project(path: ':planmer_user')
+    implementation project(path: ':planmer_calendar')
+
 }

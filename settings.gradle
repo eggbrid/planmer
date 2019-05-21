@@ -1,1 +1,1 @@
-include ':BaseLib', ':ConstantLibs', ':testlibs', ':planmer'
+include ':BaseLib', ':ConstantLibs', ':testlibs', ':planmer', ':planmer_user', ':planmer_calendar'

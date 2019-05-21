@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import com.alibaba.android.arouter.facade.Postcard;
 import com.alibaba.android.arouter.launcher.ARouter;
+import kirito.peoject.baselib.UI.BaseFragment;
 
 /**
  * @Description: the helper for ali ARouter ，Help us manage the jump
@@ -55,6 +56,12 @@ public class LibJumpHelper {
      */
     public static void startActivityForResult(Activity context, String path,Bundle bundle, int requestCode) {
         ARouter.getInstance().build(path).with(bundle).navigation(context, requestCode);
+    }
+
+
+    public static BaseFragment getFragment(String path){
+       return (BaseFragment) ARouter.getInstance().build(path).navigation();
+
     }
 
 }

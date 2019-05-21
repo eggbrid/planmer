@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+    <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="60dp">
+        <RelativeLayout
+                android:id="@+id/rlLeft"
+                android:layout_width="0dp"
+                android:layout_weight=".3"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/ivLeft"
+                    android:layout_width="match_parent"
+                    android:padding="20dp"
+                    android:scaleType="fitStart"
+                    android:src="@drawable/ic_back"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+        <RelativeLayout
+                android:id="@+id/rlTitle"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="match_parent">
+            <TextView
+                    android:id="@+id/tvTitle"
+                    android:gravity="center"
+                    android:text="标题"
+                    android:textSize="20dp"
+                    android:textColor="@color/app_normal_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+                android:id="@+id/rlRight"
+                android:layout_width="0dp"
+                android:layout_weight=".3"
+                android:layout_height="match_parent">
+            <ImageView
+                    android:id="@+id/ivRight"
+                    android:layout_width="match_parent"
+                    android:padding="10dp"
+                    android:scaleType="fitEnd"
+                    android:layout_height="match_parent"/>
+
+        </RelativeLayout>
+
+    </LinearLayout>
+    <View
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_normal_color"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"/>
+</RelativeLayout>

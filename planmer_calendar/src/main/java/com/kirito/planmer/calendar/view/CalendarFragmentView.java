@@ -1,6 +1,7 @@
-package com.kirito.planmer.UI.calendar;
+package com.kirito.planmer.calendar.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import com.kirito.planmer.calendar.R;
 import kirito.peoject.baselib.mvp.BaseV;
 
 /**
@@ -15,7 +16,7 @@ public class CalendarFragmentView extends BaseV {
 
     @Override
     public int setViewLayout() {
-        return 0;
+        return R.layout.fragment_calendar;
     }
 
     @Override
