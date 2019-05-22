@@ -46,7 +46,8 @@ public class MainView extends BaseV {
         mBottomTab = (RadioGroup) findViewById(R.id.bottomTab);
         mAdd = (TextView) findViewById(R.id.Add);
         vp = findViewById(R.id.vp);
-        commentTitleView=findViewById(R.id.title);
+        vp.setUserInputEnabled(false);
+        commentTitleView = findViewById(R.id.title);
     }
 
 

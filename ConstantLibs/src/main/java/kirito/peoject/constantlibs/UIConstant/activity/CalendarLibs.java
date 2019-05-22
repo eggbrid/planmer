@@ -6,6 +6,7 @@ package kirito.peoject.constantlibs.UIConstant.activity;
  * @NOTE 类说明
  */
 public class CalendarLibs {
+    public final static String FRAGMENT_HOME ="/CalendarLibs/fragment/home";
     public final static String FRAGMENT_CALENDER ="/CalendarLibs/fragment/calender";
 
 }

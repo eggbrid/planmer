@@ -37,5 +37,6 @@ dependencies {
     implementation project(path: ':BaseLib')
     implementation project(path: ':ConstantLibs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
 
 }

@@ -1,8 +1,15 @@
 package com.kirito.planmer.calendar.view;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import com.kirito.planmer.calendar.R;
+import com.kirito.planmer.calendar.view.adapter.HomeCalendarPageAdapter;
 import kirito.peoject.baselib.mvp.BaseV;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @auther kirito
@@ -10,6 +17,8 @@ import kirito.peoject.baselib.mvp.BaseV;
  * @NOTE 类说明
  */
 public class CalendarFragmentView extends BaseV {
+    public RecyclerView recyclerView;
+
     public CalendarFragmentView(AppCompatActivity activity) {
         super(activity);
     }
@@ -21,6 +30,8 @@ public class CalendarFragmentView extends BaseV {
 
     @Override
     public void initView() {
+
+            recyclerView = findViewById(R.id.recyclerView);
 
     }
 }
