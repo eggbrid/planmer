@@ -5,8 +5,13 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.viewpager2.widget.ViewPager2;
+import com.alibaba.android.arouter.facade.annotation.Route;
 import kirito.peoject.baselib.UI.BaseActivity;
 import kirito.peoject.baselib.util.ToastUtils;
+import kirito.peoject.constantlibs.UIConstant.Main;
+import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
+
+@Route(path = Main.ACTIVITY_MAIN)
 
 public class MainActivity extends BaseActivity<MainView> {
 

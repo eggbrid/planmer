@@ -10,4 +10,5 @@ package kirito.peoject.constantlibs.UIConstant;
  * @needingAttention(注意事项):
  */
 public class Main {
+    public final static String ACTIVITY_MAIN ="/main/activity/main";
 }

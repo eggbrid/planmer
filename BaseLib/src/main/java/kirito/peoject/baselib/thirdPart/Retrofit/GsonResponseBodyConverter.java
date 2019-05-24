@@ -1,5 +1,6 @@
 package kirito.peoject.baselib.thirdPart.Retrofit;
 
+import android.util.Log;
 import com.google.gson.TypeAdapter;
 import kirito.peoject.baselib.BaseLib;
 import kirito.peoject.baselib.mvp.BaseM;
@@ -31,6 +32,7 @@ final class GsonResponseBodyConverter<T extends BaseM> implements Converter<Resp
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
+        Log.e("log",response);
         if (responseInterceptor != null) {
             response = responseInterceptor.doBeforeParse();
         }
@@ -43,7 +45,13 @@ final class GsonResponseBodyConverter<T extends BaseM> implements Converter<Resp
         try {
             if (tClass != null && type instanceof Class) {
                 t = tClass.newInstance();
-                t = t.toBean(response);
+                if (t.isReadResponseBySelf()){
+                    t = t.toBean(response);
+
+                }else {
+                    t = adapter.fromJson(response);
+
+                }
             } else {
                 t = adapter.fromJson(response);
             }

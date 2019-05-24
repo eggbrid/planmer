@@ -3,7 +3,9 @@ package com.kirito.planmer.UI;
 import android.os.Handler;
 import com.kirito.planmer.PlanmerApplication;
 import kirito.peoject.baselib.UI.BaseActivity;
+import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.baselib.util.IntentUtil;
+import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
 /**
  * @auther kirito
@@ -17,7 +19,9 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
         long startDtime=System.currentTimeMillis()-PlanmerApplication.startTime;
 
         if (startDtime>2000){
-            IntentUtil.startActivity(this,MainActivity.class);
+//            IntentUtil.startActivity(this,MainActivity.class);
+            LibJumpHelper.startActivity(UserLibs.ACTIVITY_LOPGIN);
+
             finish();
         }else {
 
@@ -26,12 +30,19 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
             new Handler().postDelayed(new Runnable() {
                 @Override
                 public void run() {
-                    IntentUtil.startActivity(SplashActivity.this,MainActivity.class);
+//                    IntentUtil.startActivity(SplashActivity.this,MainActivity.class);
+
+                    LibJumpHelper.startActivity(UserLibs.ACTIVITY_LOPGIN);
                     finish();
 
                 }
             },2000);
         }
+
+    }
+
+    @Override
+    public void onBackClick() {
 
     }
 }

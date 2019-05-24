@@ -1,7 +1,85 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:background="@color/colorffffff"
+                android:layout_height="match_parent">
+    <TextView
+            android:id="@+id/tvLogin"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="60dp"
+            android:textColor="@color/app_color"
+            android:text="登录"
+            android:textSize="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+    <LinearLayout
+            android:id="@+id/llUserName"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="50dp"
 
-</LinearLayout>
+            android:orientation="horizontal"
+            android:background="@drawable/shape_edit_bg_normal"
+            android:layout_below="@+id/tvLogin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <ImageView android:layout_width="40dp"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/ic_username"
+                   android:layout_margin="10dp"/>
+        <View android:layout_width="0.5dp" android:layout_height="match_parent"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              android:layout_marginRight="10dp"
+              android:background="@color/app_color"
+        />
+        <EditText
+                android:id="@+id/edtUserName"
+                android:layout_margin="5dp"
+                android:background="@color/colorffffffff"
+                android:layout_width="match_parent" android:layout_height="match_parent"/>
+    </LinearLayout>
+
+    <LinearLayout
+            android:id="@+id/llPassWord"
+
+            android:orientation="horizontal"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp" android:background="@drawable/shape_edit_bg_normal"
+            android:layout_below="@+id/llUserName"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <ImageView android:layout_width="40dp"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/ic_password"
+                   android:layout_margin="10dp"/>
+        <View android:layout_width="0.5dp" android:layout_height="match_parent"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+
+              android:layout_marginRight="10dp"
+              android:background="@color/app_color"
+        />
+        <EditText
+                android:id="@+id/edtPassWord"
+                android:layout_margin="5dp"
+                android:background="@color/colorffffffff"
+                android:layout_width="match_parent" android:layout_height="match_parent"/>
+
+    </LinearLayout>
+
+    <TextView
+            android:id="@+id/tvLoginBtn"
+            android:textColor="@color/colorffffff"
+            android:layout_marginRight="20dp"
+            android:text="登录"
+            android:textSize="20dp"
+            android:gravity="center"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/selector_btn_bg"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/llPassWord"
+            android:layout_width="match_parent" android:layout_height="50dp"/>
+</RelativeLayout>
