@@ -6,6 +6,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.viewpager2.widget.ViewPager2;
 import kirito.peoject.baselib.UI.BaseActivity;
+import kirito.peoject.baselib.util.ToastUtils;
 
 public class MainActivity extends BaseActivity<MainView> {
 
@@ -43,6 +44,21 @@ public class MainActivity extends BaseActivity<MainView> {
         super.onClick(v);
         if (v.getId() == view.mAdd.getId()) {
 
+        }
+    }
+long times=0;
+    @Override
+    public void onBackClick() {
+        if (times!=0){
+            if(System.currentTimeMillis()-times<=1000){
+                this.finish();
+                System.exit(0);
+            }else {
+                times=0;
+            }
+        }else {
+            times=System.currentTimeMillis();
+            ToastUtils.showShort("再次按下返回退出");
         }
     }
 }

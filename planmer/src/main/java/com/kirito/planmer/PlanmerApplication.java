@@ -10,9 +10,11 @@ import kirito.peoject.baselib.thirdPart.Retrofit.XRetrofitConfig;
  * @NOTE 类说明
  */
 public class PlanmerApplication extends Application {
+    public static  long startTime;
     @Override
     public void onCreate() {
         super.onCreate();
+        startTime=System.currentTimeMillis();
         BaseLib.init(this,BuildConfig.DEBUG,new XRetrofitConfig());
     }
 }

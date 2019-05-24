@@ -2,6 +2,7 @@ package kirito.peoject.baselib.UI;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
@@ -109,7 +110,7 @@ public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity im
     }
 
 
-    public void onBackClick(View view) {
+    public void onBackClick() {
         finish();
     }
 
@@ -238,5 +239,14 @@ public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity im
     @Override
     public void onClick(View v) {
 
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode==KeyEvent.KEYCODE_BACK){
+            onBackClick();
+            return true;
+        }
+        return super.onKeyDown(keyCode, event);
     }
 }
