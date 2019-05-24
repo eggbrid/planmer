@@ -9,6 +9,6 @@
     </style>
 <style name="Splash" parent="AppTheme">
 <item name="android:windowFullscreen">true</item>
-    <item name="android:windowBackground">@mipmap/pic_splash</item>
+    <item name="android:windowBackground">@drawable/pic_splash_l</item>
 </style>
 </resources>

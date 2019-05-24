@@ -3,6 +3,7 @@ package kirito.peoject.baselib.mvp;
 import android.view.View;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
+import com.gyf.immersionbar.ImmersionBar;
 
 /**
  * @Description:
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public abstract class BaseV {
     protected AppCompatActivity activity;
     protected View fragmentView;
+
 
     public void setFragmentView(View fragmentView) {
         this.fragmentView = fragmentView;
@@ -30,6 +32,9 @@ public abstract class BaseV {
             return fragmentView.findViewById(id);
         }
         return activity.getDelegate().findViewById(id);
+    }
+    public boolean isShowBar(){
+        return true;
     }
 
 

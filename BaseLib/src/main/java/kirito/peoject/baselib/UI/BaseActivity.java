@@ -10,6 +10,9 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import com.gyf.immersionbar.BarHide;
+import com.gyf.immersionbar.ImmersionBar;
+import kirito.peoject.baselib.R;
 import kirito.peoject.baselib.manager.permission.PermissionManager;
 import kirito.peoject.baselib.manager.permission.enums.PermissionEnum;
 import kirito.peoject.baselib.mvp.BaseP;
@@ -69,6 +72,14 @@ public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity im
             e.printStackTrace();
         }
         setContentView(view.setViewLayout());
+        ImmersionBar immersionBar= ImmersionBar.with(this)
+                 .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                .navigationBarDarkIcon(true)
+                .barColor(R.color.colorffffff).fullScreen(!view.isShowBar()).fitsSystemWindows(true);
+        if (!view.isShowBar()) {
+            immersionBar.hideBar(BarHide.FLAG_HIDE_BAR);
+        }
+        immersionBar.init();
         view.initView();
         afterInitView(view);
         initData();

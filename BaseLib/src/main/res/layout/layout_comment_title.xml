@@ -3,6 +3,11 @@
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="60dp">
+    <View
+            android:layout_alignParentTop="true"
+            android:background="@color/app_normal_color"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"/>
     <LinearLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"

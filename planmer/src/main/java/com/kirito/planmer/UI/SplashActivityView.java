@@ -1,8 +1,10 @@
 package com.kirito.planmer.UI;
 
+import android.view.WindowManager;
 import androidx.appcompat.app.AppCompatActivity;
 import com.facebook.shimmer.Shimmer;
 import com.facebook.shimmer.ShimmerFrameLayout;
+import com.gyf.immersionbar.ImmersionBar;
 import com.kirito.planmer.R;
 import kirito.peoject.baselib.mvp.BaseV;
 
@@ -30,5 +32,10 @@ public class SplashActivityView extends BaseV {
                 .setFixedWidth(300)
                 .setBaseAlpha(0)
                 .setDuration(3000).setDirection(Shimmer.Direction.LEFT_TO_RIGHT).setRepeatCount(1).build());
+    }
+
+    @Override
+    public boolean isShowBar() {
+        return false;
     }
 }
