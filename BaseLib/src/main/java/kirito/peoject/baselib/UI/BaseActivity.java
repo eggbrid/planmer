@@ -36,7 +36,7 @@ import java.util.Map;
 public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity implements View.OnClickListener {
     private PermissionManager permissionManager;
     private Map<String, BaseP> presenters = new HashMap<>();
-    protected V view;
+    public V view;
 
     //参数初始化
     public void initParams(Bundle savedInstanceState) {

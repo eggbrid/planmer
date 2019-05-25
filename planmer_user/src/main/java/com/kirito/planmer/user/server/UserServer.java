@@ -11,6 +11,6 @@ import retrofit2.http.Query;
  * @NOTE 类说明
  */
 public interface UserServer {
-    @GET("/user/test")
-    Observable<User> login();
+    @GET("/user/login")
+    Observable<User> login(@Query("userName") String userName,@Query("passWord") String passWord);
 }

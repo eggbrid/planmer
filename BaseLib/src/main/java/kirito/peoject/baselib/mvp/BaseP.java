@@ -46,7 +46,7 @@ public class BaseP<S> {
      * @param <T> the return model`s generic
      * @return
      */
-    public <T> Observable<T> request(Observable<T> observable, NetCallBack netCallBack) {
+    public <T extends BaseM> Observable<T> request(Observable<T> observable, NetCallBack netCallBack) {
         return XRetrofit.toRequest(observable, netCallBack, disposables);
     }
 

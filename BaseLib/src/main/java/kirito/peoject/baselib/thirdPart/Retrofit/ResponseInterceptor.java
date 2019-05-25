@@ -2,6 +2,9 @@ package kirito.peoject.baselib.thirdPart.Retrofit;
 
 import kirito.peoject.baselib.mvp.BaseM;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @Description:
  * @Author:kirito
@@ -11,8 +14,37 @@ import kirito.peoject.baselib.mvp.BaseM;
  * @LastChekedBy: kirito
  * @needingAttention(注意事项):
  */
-public interface ResponseInterceptor {
+public abstract class ResponseInterceptor {
 
-    String doBeforeParse();
-    <T> T doAfterParse(T t);
+
+    public abstract ResponBean doBeforeParse(String json);
+
+    public abstract <T extends BaseM> T doAfterParse(T t, ResponBean responBean);
+
+
+    public class ResponBean {
+        public ResponBean(String beanJson, Map map) {
+            this.beanJson = beanJson;
+            this.otherMap = map;
+        }
+
+        private String beanJson;
+        private Map<String, Object> otherMap;
+
+        public String getBeanJson() {
+            return beanJson;
+        }
+
+        public void setBeanJson(String beanJson) {
+            this.beanJson = beanJson;
+        }
+
+        public Map<String, Object> getOtherMap() {
+            return otherMap;
+        }
+
+        public void setOtherMap(Map<String, Object> otherMap) {
+            this.otherMap = otherMap;
+        }
+    }
 }

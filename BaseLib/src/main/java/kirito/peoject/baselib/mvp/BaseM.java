@@ -9,6 +9,25 @@ import com.google.gson.Gson;
  */
 public class BaseM {
 
+    public int code;
+    public String message;
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public String getMessage() {
+        return message;
+    }
+
+    public void setMessage(String message) {
+        this.message = message;
+    }
+
     /**
      * is parse server http response by yourself ?
      * @return true :by your self ,false :use default

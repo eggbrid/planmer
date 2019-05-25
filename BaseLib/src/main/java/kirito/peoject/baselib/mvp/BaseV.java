@@ -4,6 +4,7 @@ import android.view.View;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gyf.immersionbar.ImmersionBar;
+import kirito.peoject.baselib.UI.widget.LoadingDialog;
 
 /**
  * @Description:
@@ -13,6 +14,22 @@ import com.gyf.immersionbar.ImmersionBar;
 public abstract class BaseV {
     protected AppCompatActivity activity;
     protected View fragmentView;
+    LoadingDialog loadingDialog;
+    public LoadingDialog getLoadingDialog(String message){
+        if (loadingDialog==null){
+            loadingDialog=new LoadingDialog(activity);
+        }
+        loadingDialog.setMessage(message);
+        return loadingDialog;
+    }
+    public void showLoading(String message){
+        getLoadingDialog(message).show();
+    }
+    public void dismissLoading(){
+        if (loadingDialog!=null){
+            loadingDialog.dismiss();
+        }
+    }
 
 
     public void setFragmentView(View fragmentView) {

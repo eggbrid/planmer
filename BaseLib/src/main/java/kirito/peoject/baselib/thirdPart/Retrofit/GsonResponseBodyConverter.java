@@ -32,9 +32,11 @@ final class GsonResponseBodyConverter<T extends BaseM> implements Converter<Resp
     @Override
     public T convert(ResponseBody value) throws IOException {
         String response = value.string();
+        ResponseInterceptor.ResponBean responBean = null;
         Log.e("log",response);
         if (responseInterceptor != null) {
-            response = responseInterceptor.doBeforeParse();
+            responBean = responseInterceptor.doBeforeParse(response);
+            response=responBean.getBeanJson();
         }
         T t = null;
         Class<T> tClass = null;
@@ -59,7 +61,7 @@ final class GsonResponseBodyConverter<T extends BaseM> implements Converter<Resp
             e.printStackTrace();
         }
         if (responseInterceptor != null) {
-            t = responseInterceptor.doAfterParse(t);
+            t = responseInterceptor.doAfterParse(t,responBean);
         }
         return t;
     }

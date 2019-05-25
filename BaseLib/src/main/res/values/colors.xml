@@ -3,10 +3,14 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
+    <color name="app_color_light">#49B2EB</color>
+    <color name="app_color_light_text">#94C7E0</color>
     <color name="app_color">#269CDC</color>
     <color name="app_color_pressed">#2C88B9</color>
     <color name="app_normal_color">#CDCDCD</color>
+    <color name="app_text_color">#333333</color>
     <color name="colorffffff">#FFFFFF</color>
     <color name="colorffffffff">#00FFFFFF</color>
+    <color name="color33000000">#77000000</color>
 
 </resources>

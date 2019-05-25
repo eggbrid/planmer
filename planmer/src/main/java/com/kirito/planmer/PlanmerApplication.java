@@ -2,6 +2,7 @@ package com.kirito.planmer;
 
 import android.app.Application;
 import kirito.peoject.baselib.BaseLib;
+import kirito.peoject.baselib.thirdPart.Retrofit.ResponseInterceptor;
 import kirito.peoject.baselib.thirdPart.Retrofit.XRetrofitConfig;
 
 /**
@@ -15,6 +16,6 @@ public class PlanmerApplication extends Application {
     public void onCreate() {
         super.onCreate();
         startTime=System.currentTimeMillis();
-        BaseLib.init(this,BuildConfig.DEBUG,new XRetrofitConfig());
+        BaseLib.init(this,BuildConfig.DEBUG,new XRetrofitConfig(CodeInf.class, ResponseInf.class));
     }
 }

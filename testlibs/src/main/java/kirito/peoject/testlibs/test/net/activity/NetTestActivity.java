@@ -38,9 +38,12 @@ public class NetTestActivity extends BaseActivity<NetTestView> {
                 }
 
                 @Override
-                public void onFailure() {
+                public void onFailure(String message) {
                     Log.e(getTag(), "onFailure");
+
                 }
+
+
             });
         }
     }

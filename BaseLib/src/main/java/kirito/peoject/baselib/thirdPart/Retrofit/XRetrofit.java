@@ -8,6 +8,7 @@ import io.reactivex.functions.Consumer;
 import io.reactivex.functions.Function;
 import io.reactivex.schedulers.Schedulers;
 import kirito.peoject.baselib.BaseLib;
+import kirito.peoject.baselib.mvp.BaseM;
 import okhttp3.ResponseBody;
 
 import java.io.*;
@@ -62,8 +63,16 @@ public class XRetrofit {
         return tImpl;
     }
 
-    public static <T> Observable<T> toRequest(Observable<T> observable, NetCallBack netCallBack, List<Disposable> disposables) {
-        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new ResponseCallBack<T>(netCallBack, disposables) {
+    public static <T extends BaseM,C extends CodeInterceptor> Observable<T> toRequest(Observable<T> observable, NetCallBack netCallBack, List<Disposable> disposables) {
+        C c=null;
+        try {
+          c= (C) BaseLib.xRetrofitConfig.getCodeInterceptorInstance();
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        observable.subscribeOn(Schedulers.io()).observeOn(AndroidSchedulers.mainThread()).subscribe(new ResponseCallBack<T,C>(netCallBack, disposables,c) {
 
         });
         return observable;

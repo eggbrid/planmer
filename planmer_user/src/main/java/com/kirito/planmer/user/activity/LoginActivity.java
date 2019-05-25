@@ -29,24 +29,7 @@ public class LoginActivity extends BaseActivity<LoginActivityView> {
     @Override
     public void onClick(View v) {
         if (v.getId()==view.tvLoginBtn.getId()){
-            getP(UserP.class).login(new NetCallBack<User>() {
-                @Override
-                public void onGetData(User user) {
-
-                    LibJumpHelper.startActivity(Main.ACTIVITY_MAIN);
-                    LoginActivity.this.finish();
-                }
-
-                @Override
-                public void onFinish() {
-
-                }
-
-                @Override
-                public void onFailure() {
-
-                }
-            });
+            getP(UserP.class).login(this);
         }
     }
 }

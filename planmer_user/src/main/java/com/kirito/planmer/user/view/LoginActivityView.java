@@ -1,6 +1,7 @@
 package com.kirito.planmer.user.view;
 
 import android.graphics.Typeface;
+import android.widget.EditText;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
@@ -16,8 +17,12 @@ public class LoginActivityView extends BaseV {
     public LoginActivityView(AppCompatActivity activity) {
         super(activity);
     }
-public TextView tvLogin;
+
+    public TextView tvLogin;
     public TextView tvLoginBtn;
+    public EditText edtUserName;
+    public EditText edtPassWord;
+
     @Override
     public int setViewLayout() {
         return R.layout.activity_login;
@@ -25,10 +30,12 @@ public TextView tvLogin;
 
     @Override
     public void initView() {
-        tvLogin=findViewById(R.id.tvLogin);
-        tvLoginBtn=findViewById(R.id.tvLoginBtn);
+        edtUserName = findViewById(R.id.edtUserName);
+        edtPassWord = findViewById(R.id.edtPassWord);
+        tvLogin = findViewById(R.id.tvLogin);
+        tvLoginBtn = findViewById(R.id.tvLoginBtn);
 
-        Typeface typeface= ResourcesCompat.getFont(activity,R.font.cat);
+        Typeface typeface = ResourcesCompat.getFont(activity, R.font.cat);
         tvLogin.setTypeface(typeface);
     }
 }

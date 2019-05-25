@@ -8,7 +8,7 @@ import retrofit2.Converter;
  * @Author:kirito
  * @CreatTime:2019/2/27 0027
  */
-public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentParamsAdapter, I extends ResponseInterceptor> {
+public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentParamsAdapter, I extends ResponseInterceptor,C extends CodeInterceptor> {
     /**
      * construction Method
      */
@@ -70,6 +70,18 @@ public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentPar
 
     }
 
+    /**
+     * construction Method
+     *
+     * @param codeInterceptor  to help intercept response code
+     */
+    public XRetrofitConfig(Class<C> codeInterceptor, Class<I> responseInterceptor) {
+        this.codeInterceptor = codeInterceptor;
+        this.responseInterceptor = responseInterceptor;
+
+
+    }
+
     public String httpUrl = HttpUrls.API_URL;
     //TODO 此处需要配置到外部
     public Converter.Factory factory = GsonConverterFactory.create();
@@ -77,8 +89,10 @@ public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentPar
     private Class<D> commentParamsAdapter;//commentParamsAdapter class name
     private T tCache;// instance for retrofitInterceptor
     private D dCache;// instance for commentParamsAdapter
-    private I iCache;// instance for commentParamsAdapter
+    private I iCache;// instance for responseInterceptor
+    private C cCache;// instance for responseInterceptor
 
+    private Class<C> codeInterceptor;
     private Class<I> responseInterceptor;
 
     /**
@@ -106,5 +120,11 @@ public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentPar
             iCache = responseInterceptor.newInstance();
         }
         return iCache;
+    }
+    C getCodeInterceptorInstance() throws InstantiationException, IllegalAccessException {
+        if (cCache == null&&codeInterceptor!=null) {
+            cCache = codeInterceptor.newInstance();
+        }
+        return cCache;
     }
 }
