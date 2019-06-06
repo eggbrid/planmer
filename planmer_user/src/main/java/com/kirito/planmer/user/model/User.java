@@ -12,6 +12,16 @@ public class User extends BaseM {
     private String userName;
     private String passWord;
 
+    private String token;
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
     public String getId() {
         return id;
     }

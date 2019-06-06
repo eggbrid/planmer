@@ -6,9 +6,12 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.viewpager2.widget.ViewPager2;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.kirito.planmer.calendar.view.widget.calendarview.Calendar;
 import kirito.peoject.baselib.UI.BaseActivity;
+import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.baselib.util.ToastUtils;
 import kirito.peoject.constantlibs.UIConstant.Main;
+import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
 import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
 @Route(path = Main.ACTIVITY_MAIN)
@@ -48,7 +51,7 @@ public class MainActivity extends BaseActivity<MainView> {
 
         super.onClick(v);
         if (v.getId() == view.mAdd.getId()) {
-
+            LibJumpHelper.startActivity(CalendarLibs.ACTIVITY_ADD_TASK);
         }
     }
 long times=0;

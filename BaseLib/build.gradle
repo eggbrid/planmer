@@ -47,4 +47,6 @@ dependencies {
 // fragment快速实现（可选）
     implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta03'
     implementation 'com.github.ybq:Android-SpinKit:1.2.0'
+    api 'com.github.sdfdzx:SupperShape:v1.0.2'
+    api 'com.contrarywind:Android-PickerView:4.1.8'
 }

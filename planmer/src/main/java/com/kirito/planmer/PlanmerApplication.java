@@ -16,6 +16,6 @@ public class PlanmerApplication extends Application {
     public void onCreate() {
         super.onCreate();
         startTime=System.currentTimeMillis();
-        BaseLib.init(this,BuildConfig.DEBUG,new XRetrofitConfig(CodeInf.class, ResponseInf.class));
+        BaseLib.init(this,BuildConfig.DEBUG,new XRetrofitConfig(CodeInf.class, ResponseInf.class,ParmsAdapter.class));
     }
 }

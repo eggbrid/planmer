@@ -1,10 +1,12 @@
 package com.kirito.planmer.UI;
 
 import android.os.Handler;
+import android.text.TextUtils;
 import com.kirito.planmer.PlanmerApplication;
 import kirito.peoject.baselib.UI.BaseActivity;
 import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.baselib.util.IntentUtil;
+import kirito.peoject.baselib.util.SPUtils;
 import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
 /**
@@ -20,8 +22,7 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
 
         if (startDtime>2000){
 //            IntentUtil.startActivity(this,MainActivity.class);
-            LibJumpHelper.startActivity(UserLibs.ACTIVITY_LOPGIN);
-
+            go();
             finish();
         }else {
 
@@ -32,7 +33,7 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
                 public void run() {
 //                    IntentUtil.startActivity(SplashActivity.this,MainActivity.class);
 
-                    LibJumpHelper.startActivity(UserLibs.ACTIVITY_LOPGIN);
+                    go();
                     finish();
 
                 }
@@ -44,5 +45,15 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
     @Override
     public void onBackClick() {
 
+    }
+
+    public void go(){
+       String token= SPUtils.getInstance().getString("token");
+       if (TextUtils.isEmpty(token)){
+           LibJumpHelper.startActivity(UserLibs.ACTIVITY_LOPGIN);
+
+       }else{
+           IntentUtil.startActivity(this,MainActivity.class);
+       }
     }
 }

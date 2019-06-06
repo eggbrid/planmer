@@ -8,5 +8,6 @@ package kirito.peoject.constantlibs.UIConstant.activity;
 public class CalendarLibs {
     public final static String FRAGMENT_HOME ="/CalendarLibs/fragment/home";
     public final static String FRAGMENT_CALENDER ="/CalendarLibs/fragment/calender";
+    public final static String ACTIVITY_ADD_TASK ="/CalendarLibs/activity/addTask";
 
 }

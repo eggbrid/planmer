@@ -75,10 +75,10 @@ public class XRetrofitConfig<T extends RetrofitInterceptor, D extends CommentPar
      *
      * @param codeInterceptor  to help intercept response code
      */
-    public XRetrofitConfig(Class<C> codeInterceptor, Class<I> responseInterceptor) {
+    public XRetrofitConfig(Class<C> codeInterceptor, Class<I> responseInterceptor, Class<D> commentParamsAdapter) {
         this.codeInterceptor = codeInterceptor;
         this.responseInterceptor = responseInterceptor;
-
+        this.commentParamsAdapter=commentParamsAdapter;
 
     }
 

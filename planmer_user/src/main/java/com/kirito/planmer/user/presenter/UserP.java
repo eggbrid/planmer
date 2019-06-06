@@ -10,6 +10,8 @@ import kirito.peoject.baselib.UI.BaseActivity;
 import kirito.peoject.baselib.mvp.BaseP;
 import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.baselib.thirdPart.Retrofit.NetCallBack;
+import kirito.peoject.baselib.util.SPUtils;
+import kirito.peoject.baselib.util.ShellUtils;
 import kirito.peoject.baselib.util.ToastUtils;
 import kirito.peoject.constantlibs.UIConstant.Main;
 
@@ -20,13 +22,15 @@ import kirito.peoject.constantlibs.UIConstant.Main;
  */
 public class UserP extends BaseP<UserServer> {
     public Observable<User> login(final BaseActivity<LoginActivityView> activity) {
-        String userName=activity.view.edtUserName.getText().toString();
+        final String userName=activity.view.edtUserName.getText().toString();
         String passWord=activity.view.edtPassWord.getText().toString();
 
 activity.view.showLoading("登录中...");
         return request(getService().login(userName,passWord),    new NetCallBack<User>() {
             @Override
             public void onGetData(User user) {
+
+                SPUtils.getInstance().put("token",user.getToken());
                 activity.view.dismissLoading();
 
                 LibJumpHelper.startActivity(Main.ACTIVITY_MAIN);

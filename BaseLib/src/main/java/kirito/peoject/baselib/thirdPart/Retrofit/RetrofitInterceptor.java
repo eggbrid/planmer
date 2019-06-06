@@ -17,6 +17,7 @@ import java.util.Map;
 public class RetrofitInterceptor implements Interceptor {
     private  CommentParamsAdapter commentParamsAdapter;//the comment params adapter
     private Map<String, String> paramsMap = new HashMap<>();
+    private Map<String, String> headerMap = new HashMap<>();
 
     public CommentParamsAdapter getCommentParamsAdapter() {
         return commentParamsAdapter;
@@ -30,7 +31,10 @@ public class RetrofitInterceptor implements Interceptor {
     public Response intercept(Chain chain) throws IOException {
         Request oldRequest = chain.request();
         HttpUrl.Builder authorizedUrlBuilder = oldRequest.url().newBuilder().scheme(oldRequest.url().scheme()).host(oldRequest.url().host());
+        Request.Builder builder= oldRequest.newBuilder().method(oldRequest.method(), oldRequest.body());
+
         if (commentParamsAdapter!=null){
+            headerMap=commentParamsAdapter.onHeaderAdd(headerMap);
             paramsMap = commentParamsAdapter.onParamsAdd(paramsMap);
             if (paramsMap != null || paramsMap.size() > 0) {
                 for (Map.Entry<String, String> entry : paramsMap.entrySet()) {
@@ -38,8 +42,16 @@ public class RetrofitInterceptor implements Interceptor {
                 }
             }
             paramsMap.clear();
+
+            builder=builder.url(authorizedUrlBuilder.build());
+            if (headerMap != null || headerMap.size() > 0) {
+                for (Map.Entry<String, String> entry : headerMap.entrySet()) {
+                    builder=builder.addHeader(entry.getKey(), entry.getValue());
+                }
+            }
+            headerMap.clear();
         }
-        Request newRequest = oldRequest.newBuilder().method(oldRequest.method(), oldRequest.body()).url(authorizedUrlBuilder.build()).build();
+        Request newRequest =builder.build();
         return chain.proceed(newRequest);
 
     }

@@ -7,6 +7,6 @@ package kirito.peoject.constantlibs.net;
  * @LastChekedBy: kirito
  */
 public class HttpUrls {
-    public final static String API_URL="http://www.shprochina.com/";
+    public final static String API_URL="http://60.205.227.63/";
 
 }

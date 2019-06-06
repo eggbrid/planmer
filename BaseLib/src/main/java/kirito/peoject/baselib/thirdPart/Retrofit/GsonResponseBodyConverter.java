@@ -1,6 +1,7 @@
 package kirito.peoject.baselib.thirdPart.Retrofit;
 
 import android.util.Log;
+import com.google.gson.Gson;
 import com.google.gson.TypeAdapter;
 import kirito.peoject.baselib.BaseLib;
 import kirito.peoject.baselib.mvp.BaseM;
@@ -18,7 +19,7 @@ final class GsonResponseBodyConverter<T extends BaseM> implements Converter<Resp
     private final TypeAdapter<T> adapter;
     private ResponseInterceptor responseInterceptor;
     private final Type type;
-
+private Gson gson=new Gson();
     GsonResponseBodyConverter(TypeAdapter<T> adapter, Type type) {
         this.adapter = adapter;
         this.type = type;

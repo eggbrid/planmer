@@ -50,7 +50,7 @@ public class ResponseInf extends ResponseInterceptor {
             JsonElement dataJson = root.getAsJsonObject().get("data");
 
             try {
-                beanJson = dataJson.getAsString();
+                beanJson = dataJson.getAsJsonObject().toString();
             } catch (Exception e) {
 
             }

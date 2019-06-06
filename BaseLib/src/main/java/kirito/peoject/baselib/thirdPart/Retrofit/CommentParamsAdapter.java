@@ -17,4 +17,8 @@ public interface CommentParamsAdapter {
       */
      Map<String ,String > onParamsAdd(Map<String,String> paramsMap);
 
+
+     Map<String ,String > onHeaderAdd(Map<String,String> paramsMap);
+
+
 }

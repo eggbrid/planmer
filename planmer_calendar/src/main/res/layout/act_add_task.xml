@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent" android:background="@color/colorffffff"
+              android:layout_height="match_parent">
+    <kirito.peoject.baselib.UI.widget.CommentTitleView
+            android:id="@+id/title"
+            android:background="@color/colorffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
+
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:gravity="center_vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="任务名称"
+                  android:textSize="14dp"
+
+        />
+        <EditText
+                android:id="@+id/edtTitle"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:maxLength="8"
+                android:background="@color/colorffffffff"
+                android:gravity="right|center_vertical"
+                android:textSize="14dp"
+                android:hint="请输入8字以内的任务名称"
+        />
+
+
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          android:background="@color/app_normal_color"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:gravity="center_vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="任务开始时间"
+                  android:textSize="14dp"
+
+        />
+        <TextView
+                android:id="@+id/tvStartTime"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@color/colorffffffff"
+                android:gravity="right|center_vertical"
+                android:textSize="14dp"
+                android:hint="点击选择开始时间"
+        />
+
+
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          android:background="@color/app_normal_color"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:gravity="center_vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="任务持续天数"
+                  android:textSize="14dp"
+
+        />
+        <TextView
+                android:id="@+id/tvDay"
+                android:layout_width="0dp" android:layout_height="match_parent"
+                  android:background="@color/colorffffffff"
+                  android:gravity="right|center_vertical"
+                  android:textSize="14dp"
+                  android:layout_weight="1"
+                  android:hint="点击选择任务执行天数"
+        />
+
+
+    </LinearLayout>
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          android:background="@color/app_normal_color"/>
+
+    <LinearLayout android:layout_width="match_parent" android:layout_height="50dp"
+                  android:paddingLeft="10dp"
+                  android:paddingRight="10dp"
+                  android:gravity="center_vertical">
+
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                  android:text="单次任务持续时间"
+                  android:textSize="14dp"
+
+        />
+        <TextView
+                android:id="@+id/tvDTime"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                  android:background="@color/colorffffffff"
+                  android:gravity="right|center_vertical"
+                  android:textSize="14dp"
+                  android:hint="点击选择每次任务执行时长"
+        />
+
+
+    </LinearLayout>
+
+    <View android:layout_width="match_parent" android:layout_height="0.5dp"
+          android:background="@color/app_normal_color"/>
+
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:paddingLeft="10dp"
+                    android:orientation="vertical"
+                    android:paddingRight="10dp">
+
+        <TextView
+                android:id="@+id/tvContent"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="任务详细内容"
+                android:layout_marginTop="10dp"
+                android:textSize="14dp"
+
+        />
+        <EditText
+                android:id="@+id/edtContent"
+                android:layout_below="@+id/tvContent"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@drawable/shape_edit_bg_normal_gray"
+                android:gravity="left|top"
+                android:minHeight="60dp"
+                android:padding="10dp"
+                android:maxLines="3"
+                android:maxLength="100"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:textSize="14dp"
+                android:hint="请输入详细的任务内容"
+        />
+
+        <TextView
+                android:id="@+id/tvSubmit"
+                android:layout_width="match_parent" android:layout_height="50dp"
+                  android:layout_alignParentBottom="true"
+                  android:text="提交"
+                  android:textSize="15dp"
+                  android:textColor="@color/colorffffff"
+                  android:gravity="center"
+                  android:background="@drawable/selector_btn_bg"
+                  android:layout_marginBottom="10dp"
+
+        />
+    </RelativeLayout>
+
+</LinearLayout>
