@@ -24,7 +24,7 @@ public class ToDayFragmentView extends BaseV {
     public RelativeLayout rlStart;
     public TextView tvRemainingTime;
     public RelativeLayout rlTaskBg;
-
+    public TextView tvBtnSign;
 
 
     public ToDayFragmentView(AppCompatActivity activity) {
@@ -39,15 +39,16 @@ public class ToDayFragmentView extends BaseV {
 
     @Override
     public void initView() {
-        rlStart=findViewById(R.id.rlStart);
+        rlStart = findViewById(R.id.rlStart);
         mTvSign = findViewById(R.id.tvSign);
         mTvDay = findViewById(R.id.tvDay);
         mBtnStart = findViewById(R.id.btnStart);
         mTvTask = findViewById(R.id.tvTask);
         mTvTaskContent = findViewById(R.id.tvTaskContent);
         mTvTime = findViewById(R.id.tvTime);
-        btnTaskBg=findViewById(R.id.btnTaskBg);
-        tvRemainingTime=findViewById(R.id.tvRemainingTime);
-        rlTaskBg=findViewById(R.id.rlTaskBg);
+        btnTaskBg = findViewById(R.id.btnTaskBg);
+        tvRemainingTime = findViewById(R.id.tvRemainingTime);
+        rlTaskBg = findViewById(R.id.rlTaskBg);
+        tvBtnSign=findViewById(R.id.tvBtnSign);
     }
 }

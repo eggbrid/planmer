@@ -1,7 +1,8 @@
 package com.kirito.planmer.calendar.server;
 
+import com.kirito.planmer.calendar.model.HomeData;
 import io.reactivex.Observable;
-import retrofit2.http.GET;
+import kirito.peoject.baselib.mvp.NullData;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
 
@@ -12,5 +13,7 @@ import retrofit2.http.Query;
  */
 public interface TaskServer {
     @POST("/task/add")
-    Observable<Object> add(@Query("start_time") long start_time, @Query("title") String title, @Query("content") String content, @Query("d_time") int d_time, @Query("day") int day);
+    Observable<NullData> add(@Query("start_time") long start_time, @Query("title") String title, @Query("content") String content, @Query("d_time") long d_time, @Query("day") int day);
+    @POST("/task/home")
+    Observable<HomeData> getHome();
 }

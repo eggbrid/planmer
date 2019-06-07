@@ -5,6 +5,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kirito.planmer.user.presenter.UserP;
 import com.kirito.planmer.user.view.LoginActivityView;
 import kirito.peoject.baselib.UI.BaseActivity;
+import kirito.peoject.baselib.util.ActivityUtils;
 import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
 /**
@@ -18,6 +19,7 @@ public class LoginActivity extends BaseActivity<LoginActivityView> {
     @Override
     public void afterInitView(LoginActivityView v) {
         super.afterInitView(v);
+        ActivityUtils.finishOtherActivities(LoginActivity.class);
         v.tvLoginBtn.setOnClickListener(this);
     }
 

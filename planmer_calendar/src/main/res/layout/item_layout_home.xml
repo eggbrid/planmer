@@ -36,7 +36,9 @@
                 android:textSize="14dp"
                 android:textColor="@color/app_text_color"
         />
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+        <TextView
+                android:id="@+id/tvBtnSign"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:text="签到"
                   android:layout_centerVertical="true"
                   android:background="@drawable/selector_btn_bg"
@@ -97,12 +99,13 @@
                 android:layout_toLeftOf="@+id/tvRemainingTime"
                 android:textSize="16dp"
                 android:text="任务名称"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"/>
         <TextView
                 android:id="@+id/tvRemainingTime"
                 android:text="30m 30s"
                 android:layout_marginRight="10dp"
+                android:gravity="right"
                 android:layout_alignParentRight="true"
                 android:layout_marginTop="10dp"
                 android:textColor="@color/colorffffff"
