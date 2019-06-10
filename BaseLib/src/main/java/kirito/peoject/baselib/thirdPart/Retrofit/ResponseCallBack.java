@@ -49,6 +49,8 @@ public abstract class ResponseCallBack<T extends BaseM, C extends CodeIntercepto
     public void onError(Throwable e) {
         e.printStackTrace();
         callBack.onFailure("获取到神秘代码" + e.getMessage());
+        callBack.onFinish();
+
     }
 
     @Override

@@ -7,14 +7,23 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.LinearInterpolator;
 import android.view.animation.RotateAnimation;
+import androidx.annotation.NonNull;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kirito.planmer.calendar.R;
+import com.kirito.planmer.calendar.activity.AddTaskActivity;
 import com.kirito.planmer.calendar.presenter.SignP;
 import com.kirito.planmer.calendar.presenter.TaskP;
+import com.kirito.planmer.calendar.view.widget.MyTaurusHeader;
 import com.kirito.planmer.calendar.view.widget.ToDayFragmentView;
+import com.scwang.smartrefresh.header.*;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.header.ClassicsHeader;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
 import com.study.xuan.shapebuilder.shape.ShapeBuilder;
 import kirito.peoject.baselib.UI.BaseFragment;
+import kirito.peoject.baselib.util.IntentUtil;
 import kirito.peoject.baselib.util.SizeUtils;
+import kirito.peoject.baselib.util.ThreadUtils;
 import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
 
 import static android.graphics.drawable.GradientDrawable.RECTANGLE;
@@ -30,26 +39,46 @@ public class ToDayFragment extends BaseFragment<ToDayFragmentView> implements Vi
     private CountDownTimer countDownTimer;
 
     public long times;
+    public long dtimes;
+
+    public int task_info_id;
 
     @Override
-    public void afterInitView(ToDayFragmentView view) {
+    public void afterInitView(final ToDayFragmentView view) {
         view.rlStart.setOnClickListener(this);
         view.tvBtnSign.setOnClickListener(this);
+        view.rlNoTask.setOnClickListener(this);
+        view.rlNoTask.setVisibility(View.VISIBLE);
+        view.rlTaskBg.setVisibility(View.GONE);
+        view.srlRefresh.setOnRefreshListener(new OnRefreshListener() {
+            @Override
+            public void onRefresh(@NonNull RefreshLayout refreshLayout) {
+                getData();
+            }
+        });
+        view.srlRefresh.setRefreshHeader(new MyTaurusHeader(activity));
+        getData();
+
+    }
+
+    public void getData() {
         getP(TaskP.class).getHome(this, view);
+
     }
 
     @Override
     public void onClick(View v) {
         if (v.getId() == view.rlStart.getId()) {
             if (isStarted) {
-                stopTask();
+                getP(TaskP.class).changeStatus(this,view,2,task_info_id);
             } else {
-                startTask();
-
+                getP(TaskP.class).changeStatus(this,view,1,task_info_id);
             }
             isStarted = !isStarted;
         } else if (v.getId() == view.tvBtnSign.getId()) {
             getP(SignP.class).add(view.mTvDay, view.tvBtnSign);
+        } else if (v.getId() == view.rlNoTask.getId()) {
+            IntentUtil.startActivity(activity, AddTaskActivity.class);
         }
     }
 
@@ -90,6 +119,12 @@ public class ToDayFragment extends BaseFragment<ToDayFragmentView> implements Vi
     public void stopTask() {
         view.btnTaskBg.clearAnimation();
         view.mBtnStart.setImageResource(R.drawable.btn_task_start);
+        ShapeBuilder.create()
+                .Radius(SizeUtils.dp2px(5))
+                .Type(RECTANGLE)
+                .Solid(getResources().getColor(R.color.app_color_light, null))
+                .build(view.rlTaskBg);
+        if (countDownTimer!=null)
         countDownTimer.cancel();
     }
 

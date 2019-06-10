@@ -5,6 +5,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kirito.planmer.calendar.R;
+import com.scwang.smartrefresh.layout.SmartRefreshLayout;
 import kirito.peoject.baselib.mvp.BaseV;
 
 /**
@@ -25,7 +26,8 @@ public class ToDayFragmentView extends BaseV {
     public TextView tvRemainingTime;
     public RelativeLayout rlTaskBg;
     public TextView tvBtnSign;
-
+    public SmartRefreshLayout srlRefresh;
+    public RelativeLayout rlNoTask;
 
     public ToDayFragmentView(AppCompatActivity activity) {
         super(activity);
@@ -49,6 +51,8 @@ public class ToDayFragmentView extends BaseV {
         btnTaskBg = findViewById(R.id.btnTaskBg);
         tvRemainingTime = findViewById(R.id.tvRemainingTime);
         rlTaskBg = findViewById(R.id.rlTaskBg);
-        tvBtnSign=findViewById(R.id.tvBtnSign);
+        tvBtnSign = findViewById(R.id.tvBtnSign);
+        srlRefresh = findViewById(R.id.srlRefresh);
+        rlNoTask=findViewById(R.id.rlNoTask);
     }
 }

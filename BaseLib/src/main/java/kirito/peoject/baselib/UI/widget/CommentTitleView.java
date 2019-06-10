@@ -80,5 +80,20 @@ public class CommentTitleView extends RelativeLayout {
         mTvTitle.setText(title);
     }
 
-
+    /**
+     * set only has title string title bar
+     */
+    public void setRight(int id,OnClickListener onClickListener) {
+        mIvRight.setVisibility(VISIBLE);
+        mIvRight.setImageResource(id);
+        mRlRight.setVisibility(VISIBLE);
+        mRlRight.setOnClickListener(onClickListener);
+    }
+    /**
+     * set only has title string title bar
+     */
+    public void goneRight() {
+        mIvRight.setVisibility(INVISIBLE);
+        mRlRight.setVisibility(INVISIBLE);
+    }
 }

@@ -2,10 +2,12 @@ package com.kirito.planmer.calendar.presenter;
 
 import android.graphics.Color;
 import android.text.TextUtils;
+import android.view.View;
 import com.kirito.planmer.calendar.R;
 import com.kirito.planmer.calendar.activity.AddTaskActivity;
 import com.kirito.planmer.calendar.fragment.ToDayFragment;
 import com.kirito.planmer.calendar.model.HomeData;
+import com.kirito.planmer.calendar.model.TaskInfoModel;
 import com.kirito.planmer.calendar.model.TaskModel;
 import com.kirito.planmer.calendar.server.TaskServer;
 import com.kirito.planmer.calendar.view.widget.ToDayFragmentView;
@@ -118,8 +120,22 @@ public class TaskP extends BaseP<TaskServer> {
                         view.mTvTime.setText(TimeUtils.date2String(new Date(taskModel.getStarTime()), simpleDateFormat) + "-" + TimeUtils.date2String(new Date(taskModel.getEndTime()), simpleDateFormat) + text);
                         view.tvRemainingTime.setText(times);
                         toDayFragment.times = taskModel.getdTime();
+                        toDayFragment.dtimes = taskModel.getdTime();
 
+                        view.rlNoTask.setVisibility(View.GONE);
+                        view.rlTaskBg.setVisibility(View.VISIBLE);
+
+                        if (data.getTaskInfo() != null) {
+                            TaskInfoModel taskInfoModel = data.getTaskInfo();
+                            toDayFragment.task_info_id=taskInfoModel.id;
+                            setStatus(taskInfoModel, toDayFragment, view);
+                        }
+
+                    } else {
+                        view.rlNoTask.setVisibility(View.VISIBLE);
+                        view.rlTaskBg.setVisibility(View.GONE);
                     }
+
 
                     int isTodaySign = data.getIsTodaySign();
                     if (isTodaySign == 1) {
@@ -130,7 +146,7 @@ public class TaskP extends BaseP<TaskServer> {
                                 .build(view.tvBtnSign);
                         view.tvBtnSign.setEnabled(false);
                         view.tvBtnSign.setText("已签到");
-                    }else{
+                    } else {
                         ShapeBuilder.create()
                                 .Radius(SizeUtils.dp2px(5))
                                 .Type(RECTANGLE)
@@ -140,8 +156,8 @@ public class TaskP extends BaseP<TaskServer> {
                         view.tvBtnSign.setText("签到");
                     }
 
-                    if (data.getSign()!=null){
-                        view.mTvDay.setText(data.getSign().getDays()+"");
+                    if (data.getSign() != null) {
+                        view.mTvDay.setText(data.getSign().getDays() + "");
                     }
                 }
 
@@ -150,6 +166,7 @@ public class TaskP extends BaseP<TaskServer> {
             @Override
             public void onFinish() {
                 view.dismissLoading();
+                view.srlRefresh.finishRefresh();
 
             }
 
@@ -160,5 +177,84 @@ public class TaskP extends BaseP<TaskServer> {
         });
     }
 
+    public void setStatus(TaskInfoModel taskInfoModel, ToDayFragment toDayFragment, ToDayFragmentView view) {
+        if (taskInfoModel.getStatus() == 0) {
+            view.rlStart.setVisibility(View.VISIBLE);
+
+            //未开始
+            toDayFragment.stopTask();
+
+        } else if (taskInfoModel.getStatus() == 1) {
+            //一开始
+            toDayFragment.stopTask();
+            toDayFragment.times =toDayFragment.dtimes-( taskInfoModel.getEndTime() - taskInfoModel.getStartTime());
+            toDayFragment.startTask();
+        } else if (taskInfoModel.getStatus() == 2) {
+            toDayFragment.stopTask();
+            toDayFragment.times =toDayFragment.dtimes-(taskInfoModel.getEndTime() - taskInfoModel.getStartTime());
+
+
+            String times = "";
+
+            long h = toDayFragment.times / (60 * 60 * 1000);
+            if (h > 0) {
+                times = h + "时";
+
+            }
+            long m = (toDayFragment.times - h * 60 * 60 * 1000) / (60 * 1000);
+            if (m > 0) {
+                times = times + m + "分";
+
+            }
+            long s = (toDayFragment.times - h * 60 * 60 * 1000 - m * 60 * 1000) / 1000;
+            if (s > 0) {
+                times = times + s + "秒";
+            }
+
+            view.tvRemainingTime.setText("已暂停 还剩 "+times);
+
+        } else if (taskInfoModel.getStatus() == 3) {
+            toDayFragment.stopTask();
+            view.rlStart.setVisibility(View.GONE);
+            view.tvRemainingTime.setText("已结束");
+            ShapeBuilder.create()
+                    .Radius(SizeUtils.dp2px(5))
+                    .Type(RECTANGLE)
+                    .Solid(view.rlTaskBg.getContext().getResources().getColor(R.color.color_finish, null))
+                    .build(view.rlTaskBg);
+        } else {
+            toDayFragment.stopTask();
+            view.rlStart.setVisibility(View.GONE);
+            view.tvRemainingTime.setText("已完成");
+            ShapeBuilder.create()
+                    .Radius(SizeUtils.dp2px(5))
+                    .Type(RECTANGLE)
+                    .Solid(view.rlTaskBg.getContext().getResources().getColor(R.color.color_finish, null))
+                    .build(view.rlTaskBg);
+        }
+    }
+
+    public void changeStatus(final ToDayFragment toDayFragment, final ToDayFragmentView view, int status, int id) {
+        view.showLoading("...");
+        request(getService().changeStatus(status, id), new NetCallBack<TaskInfoModel>() {
+            @Override
+            public void onGetData(TaskInfoModel o) {
+                if (o != null) {
+                    setStatus(o, toDayFragment, view);
+                }
+
+            }
+
+            @Override
+            public void onFinish() {
+                view.dismissLoading();
+            }
+
+            @Override
+            public void onFailure(String message) {
+
+            }
+        });
+    }
 
 }

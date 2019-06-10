@@ -12,7 +12,15 @@ public class HomeData extends BaseM {
     private int isTodaySign;//0未签到 1已签到
 
     private SignModel sign;
+    private TaskInfoModel taskInfo;
 
+    public TaskInfoModel getTaskInfo() {
+        return taskInfo;
+    }
+
+    public void setTaskInfo(TaskInfoModel taskInfo) {
+        this.taskInfo = taskInfo;
+    }
 
     public TaskModel getTask() {
         return task;
