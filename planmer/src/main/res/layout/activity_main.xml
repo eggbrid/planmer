@@ -4,11 +4,7 @@
         android:layout_width="match_parent"
         android:background="@color/colorffffff"
         android:layout_height="match_parent">
-    <kirito.peoject.baselib.UI.widget.CommentTitleView
-            android:id="@+id/title"
-            android:background="@color/colorffffff"
-            android:layout_width="match_parent"
-            android:layout_height="60dp"/>
+
 
     <androidx.viewpager2.widget.ViewPager2
             android:layout_below="@+id/title"
@@ -72,7 +68,7 @@
                 android:textColor="@color/home_selected_color"
                 android:drawableTop="@drawable/selector_ic_home_add"
                 android:checked="true"
-                android:text="添加任务"
+                android:text="添加计划"
 android:drawablePadding="10dp"
                 android:layout_marginBottom="5dp"
                 android:gravity="bottom|center_horizontal"

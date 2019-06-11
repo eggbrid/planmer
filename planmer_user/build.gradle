@@ -38,4 +38,5 @@ dependencies {
     implementation project(path: ':ConstantLibs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
 
+
 }

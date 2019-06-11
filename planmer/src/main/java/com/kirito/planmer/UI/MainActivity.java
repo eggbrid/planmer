@@ -8,6 +8,7 @@ import androidx.viewpager2.widget.ViewPager2;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.kirito.planmer.calendar.view.widget.calendarview.Calendar;
 import kirito.peoject.baselib.UI.BaseActivity;
+import kirito.peoject.baselib.UI.BaseFragment;
 import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.baselib.util.ToastUtils;
 import kirito.peoject.constantlibs.UIConstant.Main;
@@ -22,7 +23,6 @@ public class MainActivity extends BaseActivity<MainView> {
 
     @Override
     public void afterInitView(final MainView v) {
-        v.commentTitleView.setOnlyTitle("首页");
         v.mAdd.setOnClickListener(this);
         mainAdapter = new MainAdapter(getSupportFragmentManager());
         v.vp.setAdapter(mainAdapter);
@@ -31,7 +31,10 @@ public class MainActivity extends BaseActivity<MainView> {
             public void onCheckedChanged(RadioGroup group, int checkedId) {
                 if (((RadioButton) findViewById(checkedId)).isChecked()) {
                     v.vp.setCurrentItem(v.mHome.getId() == checkedId ? 0 : 1);
-                    v.commentTitleView.setOnlyTitle(v.mHome.getId() == checkedId ?"首页":"用户");
+                    if (getSupportFragmentManager().getFragments()!=null&&getSupportFragmentManager().getFragments().size()>(v.mHome.getId() == checkedId ? 0 : 1)+1){
+                        ((BaseFragment)getSupportFragmentManager().getFragments().get( (v.mHome.getId() == checkedId ? 0 : 1)+1)).initImmersionBar();
+
+                    }
                 }
             }
         });
@@ -39,7 +42,7 @@ public class MainActivity extends BaseActivity<MainView> {
             @Override
             public void onPageSelected(int position) {
                 v.mBottomTab.check(position == 0 ? v.mHome.getId() : v.mUser.getId());
-                v.commentTitleView.setOnlyTitle(position == 0  ?"首页":"用户");
+
 
             }
         });

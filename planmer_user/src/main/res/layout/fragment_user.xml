@@ -4,4 +4,32 @@
               android:layout_width="match_parent"
               android:layout_height="match_parent">
 
+
+    <RelativeLayout
+            android:padding="10dp"
+            android:background="@color/app_color_light"
+            android:layout_width="match_parent" android:layout_height="wrap_content">
+
+        <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/ivAvatar"
+                android:background="@drawable/ic_defult_avatar"
+                android:layout_centerHorizontal="true"
+                android:padding="1dp"
+
+        />
+        <TextView
+                android:id="@+id/tvName"
+                android:layout_below="@+id/ivAvatar"
+                android:layout_marginTop="5dp"
+                android:textSize="15dp"
+                android:textColor="@color/colorffffff"
+                android:text="昵称"
+                android:layout_centerHorizontal="true"
+                android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"/>
+
+    </RelativeLayout>
 </LinearLayout>

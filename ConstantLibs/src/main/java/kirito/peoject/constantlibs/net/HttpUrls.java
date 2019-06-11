@@ -8,5 +8,6 @@ package kirito.peoject.constantlibs.net;
  */
 public class HttpUrls {
     public final static String API_URL="http://60.205.227.63/";
+    public final static String FILE_URL="http://60.205.227.63:8089/";
 
 }

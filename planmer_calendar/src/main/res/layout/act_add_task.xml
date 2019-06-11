@@ -16,7 +16,7 @@
                   android:gravity="center_vertical">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="任务名称"
+                  android:text="计划名称"
                   android:textSize="14dp"
 
         />
@@ -28,7 +28,7 @@
                 android:background="@color/colorffffffff"
                 android:gravity="right|center_vertical"
                 android:textSize="14dp"
-                android:hint="请输入8字以内的任务名称"
+                android:hint="请输入8字以内的计划名称"
         />
 
 
@@ -42,7 +42,7 @@
                   android:gravity="center_vertical">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="任务开始时间"
+                  android:text="计划开始时间"
                   android:textSize="14dp"
 
         />
@@ -66,7 +66,7 @@
                   android:gravity="center_vertical">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="任务持续天数"
+                  android:text="计划持续天数"
                   android:textSize="14dp"
 
         />
@@ -77,7 +77,7 @@
                   android:gravity="right|center_vertical"
                   android:textSize="14dp"
                   android:layout_weight="1"
-                  android:hint="点击选择任务执行天数"
+                  android:hint="点击选择计划执行天数"
         />
 
 
@@ -91,7 +91,7 @@
                   android:gravity="center_vertical">
 
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:text="单次任务持续时间"
+                  android:text="单次计划持续时间"
                   android:textSize="14dp"
 
         />
@@ -101,7 +101,7 @@
                   android:background="@color/colorffffffff"
                   android:gravity="right|center_vertical"
                   android:textSize="14dp"
-                  android:hint="点击选择每次任务执行时长"
+                  android:hint="点击选择每次计划执行时长"
         />
 
 
@@ -118,7 +118,7 @@
         <TextView
                 android:id="@+id/tvContent"
                 android:layout_width="wrap_content" android:layout_height="wrap_content"
-                android:text="任务详细内容"
+                android:text="计划详细内容"
                 android:layout_marginTop="10dp"
                 android:textSize="14dp"
 
@@ -136,7 +136,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginBottom="10dp"
                 android:textSize="14dp"
-                android:hint="请输入详细的任务内容"
+                android:hint="请输入详细的计划内容"
         />
 
         <TextView

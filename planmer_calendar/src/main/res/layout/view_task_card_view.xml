@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+              android:orientation="vertical"
+              android:id="@+id/rlTaskBg"
+              android:layout_width="match_parent"
+              android:layout_margin="10dp"
+              android:background="@drawable/bg_card"
+              android:layout_height="wrap_content">
+    <RelativeLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <RelativeLayout
+                android:id="@+id/rlStart"
+                android:layout_width="60dp" android:layout_height="60dp"
+                android:layout_centerVertical="true"
+                android:layout_margin="10dp"
+        >
+            <ImageView
+                    android:id="@+id/btnTaskBg"
+                    android:background="@drawable/ic_task_bg"
+
+                    android:layout_width="60dp"
+                    android:layout_centerInParent="true"
+                    android:layout_height="60dp"/>
+
+            <ImageView
+                    android:id="@+id/btnStart"
+                    android:src="@drawable/btn_task_start"
+                    android:layout_width="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:layout_height="wrap_content"/>
+
+        </RelativeLayout>
+        <TextView
+                android:id="@+id/tvTask"
+                android:layout_toRightOf="@+id/rlStart"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/colorffffff"
+                android:layout_toLeftOf="@+id/tvRemainingTime"
+                android:textSize="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+        <TextView
+                android:id="@+id/tvRemainingTime"
+                android:layout_marginRight="10dp"
+                android:gravity="right"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:textColor="@color/colorffffff"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+
+
+        />
+        <TextView
+                android:id="@+id/tvTaskContent"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_below="@+id/tvTask"
+                android:textColor="@color/colorffffff"
+                android:textSize="14dp"
+                android:layout_toRightOf="@+id/rlStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        <TextView
+                android:id="@+id/tvTime"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tvTaskContent"
+                android:textColor="@color/colorffffff"
+                android:layout_marginLeft="10dp"
+
+                android:textSize="12dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toRightOf="@+id/rlStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+    </RelativeLayout>
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content">
+        <View android:layout_width="match_parent" android:layout_height="0.5dp"
+              android:background="@color/colorffffff"
+        />
+
+    </LinearLayout>
+    <TextView
+            android:id="@+id/tvFinish"
+            android:textColor="@color/colorffffff"
+            android:gravity="center"
+            android:text="点击完成该计划"
+            android:visibility="gone"
+            android:layout_width="match_parent" android:layout_height="40dp"
+
+    />
+</LinearLayout>

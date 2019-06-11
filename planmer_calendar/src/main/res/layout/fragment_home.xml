@@ -3,6 +3,11 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
+    <kirito.peoject.baselib.UI.widget.CommentTitleView
+            android:id="@+id/title"
+            android:background="@color/colorffffff"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"/>
     <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/vp"
             android:layout_width="match_parent"

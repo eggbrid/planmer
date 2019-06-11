@@ -16,18 +16,11 @@ import kirito.peoject.baselib.mvp.BaseV;
 public class ToDayFragmentView extends BaseV {
 
     public TextView mTvSign;
-    public TextView mTvDay;
-    public ImageView mBtnStart;
-    public TextView mTvTask;
-    public TextView mTvTaskContent;
-    public TextView mTvTime;
-    public ImageView btnTaskBg;
-    public RelativeLayout rlStart;
-    public TextView tvRemainingTime;
-    public RelativeLayout rlTaskBg;
+    public TaskCardView taskCardView;
     public TextView tvBtnSign;
     public SmartRefreshLayout srlRefresh;
     public RelativeLayout rlNoTask;
+    public TextView tvDay;
 
     public ToDayFragmentView(AppCompatActivity activity) {
         super(activity);
@@ -41,18 +34,11 @@ public class ToDayFragmentView extends BaseV {
 
     @Override
     public void initView() {
-        rlStart = findViewById(R.id.rlStart);
+        taskCardView = findViewById(R.id.taskCardView);
         mTvSign = findViewById(R.id.tvSign);
-        mTvDay = findViewById(R.id.tvDay);
-        mBtnStart = findViewById(R.id.btnStart);
-        mTvTask = findViewById(R.id.tvTask);
-        mTvTaskContent = findViewById(R.id.tvTaskContent);
-        mTvTime = findViewById(R.id.tvTime);
-        btnTaskBg = findViewById(R.id.btnTaskBg);
-        tvRemainingTime = findViewById(R.id.tvRemainingTime);
-        rlTaskBg = findViewById(R.id.rlTaskBg);
+        tvDay=findViewById(R.id.tvDay);
         tvBtnSign = findViewById(R.id.tvBtnSign);
         srlRefresh = findViewById(R.id.srlRefresh);
-        rlNoTask=findViewById(R.id.rlNoTask);
+        rlNoTask = findViewById(R.id.rlNoTask);
     }
 }

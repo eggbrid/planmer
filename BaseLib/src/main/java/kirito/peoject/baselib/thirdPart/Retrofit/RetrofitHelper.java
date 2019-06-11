@@ -39,6 +39,18 @@ public final class RetrofitHelper {
         builder=  builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
         return builder.build();
     }
+
+    public Retrofit toRetrofit(String url) {
+        Retrofit.Builder builder = new Retrofit.Builder().baseUrl(url);
+        if (client != null) {
+            builder = builder.client(client);
+        }
+        if (factory!=null){
+            builder=  builder.addConverterFactory(factory);
+        }
+        builder=  builder.addCallAdapterFactory(RxJava2CallAdapterFactory.create());
+        return builder.build();
+    }
     public static final  class Builder {
         public RetrofitInterceptor retrofitInterceptor;
         public Converter.Factory factory;

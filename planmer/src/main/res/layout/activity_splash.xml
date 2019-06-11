@@ -2,17 +2,17 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-<com.facebook.shimmer.ShimmerFrameLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/shimmer_view_container"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
->
-    <ImageView
-            android:background="@drawable/pic_splash_l"
+    <com.facebook.shimmer.ShimmerFrameLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/shimmer_view_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"/>
+            android:layout_height="match_parent"
 
-</com.facebook.shimmer.ShimmerFrameLayout>
+    >
+        <ImageView
+                android:background="@drawable/pic_splash_l"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </com.facebook.shimmer.ShimmerFrameLayout>
 </LinearLayout>

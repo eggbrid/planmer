@@ -35,6 +35,9 @@ public class BaseP<S> {
     public S getService() {
         return XRetrofit.getServerCall(getSClass());
     }
+    public S getService(String url) {
+        return XRetrofit.getServerCall(getSClass(),url);
+    }
     public S readyDownload(DownloadCallBack downloadCallBack) {
         return XRetrofit.getDownloadServiceCall(getSClass(),downloadCallBack);
     }

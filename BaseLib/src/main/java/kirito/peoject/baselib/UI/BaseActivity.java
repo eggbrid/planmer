@@ -72,7 +72,7 @@ public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity im
             e.printStackTrace();
         }
         setContentView(view.setViewLayout());
-        ImmersionBar immersionBar= ImmersionBar.with(this)
+        ImmersionBar immersionBar= ImmersionBar.with(this).reset()
                  .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
                 .navigationBarDarkIcon(true)
                 .barColor(R.color.colorffffff).fullScreen(!view.isShowBar()).fitsSystemWindows(true);

@@ -27,7 +27,6 @@ public class MainView extends BaseV {
     public TextView mAdd;
     public ViewPager2 vp;
 
-    public CommentTitleView commentTitleView;
 
     public MainView(AppCompatActivity activity) {
         super(activity);
@@ -47,7 +46,6 @@ public class MainView extends BaseV {
         mAdd = (TextView) findViewById(R.id.Add);
         vp = findViewById(R.id.vp);
         vp.setUserInputEnabled(false);
-        commentTitleView = findViewById(R.id.title);
     }
 
 

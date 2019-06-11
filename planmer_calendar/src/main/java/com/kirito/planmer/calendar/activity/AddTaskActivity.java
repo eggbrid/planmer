@@ -27,7 +27,7 @@ public class AddTaskActivity extends BaseActivity<AddTaskActivityView> implement
         view.mTvDTime.setOnClickListener(this);
         view.mTvStartTime.setOnClickListener(this);
         view.tvSubmit.setOnClickListener(this);
-
+view.mTitle.setNormalTitle(this,"添加计划");
     }
 
     @Override

@@ -9,6 +9,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import com.gyf.immersionbar.BarHide;
+import com.gyf.immersionbar.ImmersionBar;
+import com.gyf.immersionbar.components.ImmersionFragment;
+import kirito.peoject.baselib.R;
 import kirito.peoject.baselib.manager.permission.PermissionManager;
 import kirito.peoject.baselib.mvp.BaseP;
 import kirito.peoject.baselib.mvp.BaseV;
@@ -28,20 +32,22 @@ import java.util.Map;
  * @LastChekedBy: 王旭
  * @needingAttention(注意事项):
  */
-public abstract class BaseFragment<V extends BaseV> extends Fragment {
+public abstract class BaseFragment<V extends BaseV> extends ImmersionFragment {
 
     /**
      * 请求队列。
      */
     public Context activity;
     private boolean isInitView = false;//是否与View建立起映射关系[初始化视图]
-    private boolean isFirstLoad = true;//第一次加载
+    private boolean isFirstLoad = true;//第一次加载 暂停
     private PermissionManager permissionManager;
     public boolean isFirstLoad() {
         return isFirstLoad;
     }
     private Map<String, BaseP> presenters = new HashMap<>();
     protected V view;
+
+
     @Override
     public void setUserVisibleHint(boolean isVisibleToUser) {
         super.setUserVisibleHint(isVisibleToUser);
@@ -70,9 +76,23 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
         View fv=inflater.inflate(view.setViewLayout(),container,false);
         view.setFragmentView(fv);
         view.initView();
+
         afterInitView(view);
         initData();
         return fv;
+    }
+
+    @Override
+    public void initImmersionBar() {
+        ImmersionBar immersionBar= ImmersionBar.with(this)
+                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                .navigationBarDarkIcon(true)
+                .barEnable(true)
+                .statusBarColor(view.getBarColor()).fullScreen(!view.isShowBar()).fitsSystemWindows(true);
+        if (!view.isShowBar()) {
+            immersionBar=immersionBar.hideBar(BarHide.FLAG_HIDE_BAR);
+        }
+        immersionBar.init();
     }
 
     /**
@@ -93,6 +113,7 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
 
         isInitView = true;//视图view已经初始化完毕
         isCanLoadData();
+
     }
 
 
@@ -117,6 +138,7 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
 
     public  void initData(){
 
+
     }
 
     public boolean isInitView() {
@@ -127,6 +149,13 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
         isInitView = initView;
     }
 
+
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
 
     @Override
     public void onDestroy() {
@@ -156,6 +185,7 @@ public abstract class BaseFragment<V extends BaseV> extends Fragment {
     @Override
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
+
         if (!hidden) {
             onResume();
         }

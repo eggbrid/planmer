@@ -4,6 +4,7 @@ import android.view.View;
 import androidx.annotation.IdRes;
 import androidx.appcompat.app.AppCompatActivity;
 import com.gyf.immersionbar.ImmersionBar;
+import kirito.peoject.baselib.R;
 import kirito.peoject.baselib.UI.widget.LoadingDialog;
 
 /**
@@ -15,6 +16,15 @@ public abstract class BaseV {
     protected AppCompatActivity activity;
     protected View fragmentView;
     LoadingDialog loadingDialog;
+    protected int barColor= R.color.colorffffff;
+
+    public int getBarColor() {
+        return barColor;
+    }
+
+    public void setBarColor(int barColor) {
+        this.barColor = barColor;
+    }
     public LoadingDialog getLoadingDialog(String message){
         if (loadingDialog==null){
             loadingDialog=new LoadingDialog(activity);

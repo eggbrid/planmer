@@ -62,6 +62,27 @@ public class XRetrofit {
         T tImpl = retrofitHelperBuilder.build().toRetrofit().create(server);
         return tImpl;
     }
+    public static <T> T getServerCall(Class<T> server,String url) {
+        RetrofitHelper.Builder retrofitHelperBuilder = new RetrofitHelper.Builder();
+        retrofitHelperBuilder = retrofitHelperBuilder.baseUrl(url);
+        try {
+            retrofitHelperBuilder = retrofitHelperBuilder.retrofitInterceptor(BaseLib.xRetrofitConfig.getInterceptorInstance());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        try {
+            retrofitHelperBuilder = retrofitHelperBuilder.commentParamsAdapter(BaseLib.xRetrofitConfig.getCommentParamsAdapterInstance());
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+        retrofitHelperBuilder = retrofitHelperBuilder.converterFactory(BaseLib.xRetrofitConfig.factory);
+        T tImpl = retrofitHelperBuilder.build().toRetrofit(url).create(server);
+        return tImpl;
+    }
 
     public static <T extends BaseM,C extends CodeInterceptor> Observable<T> toRequest(Observable<T> observable, NetCallBack netCallBack, List<Disposable> disposables) {
         C c=null;

@@ -89,7 +89,7 @@ public final class Calendar implements Serializable, Comparable<Calendar> {
     private String traditionFestival;
 
     /**
-     * 计划，可以用来标记当天是否有任务,这里是默认的，如果使用多标记，请使用下面API
+     * 计划，可以用来标记当天是否有计划,这里是默认的，如果使用多标记，请使用下面API
      * using addScheme(int schemeColor,String scheme); multi scheme
      */
     private String scheme;

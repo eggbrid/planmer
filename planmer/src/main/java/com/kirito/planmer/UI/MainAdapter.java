@@ -8,21 +8,27 @@ import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
 import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @auther kirito
  * @Date 2019-05-20
  * @NOTE 类说明
  */
 public class MainAdapter extends FragmentStateAdapter {
+    List<Fragment> list=new ArrayList<>();
     public MainAdapter(@NonNull FragmentManager fragmentManager) {
         super(fragmentManager);
+        list.add(LibJumpHelper.getFragment(CalendarLibs.FRAGMENT_HOME ));
+        list.add(LibJumpHelper.getFragment( UserLibs.FRAGMENT_USER));
 
     }
 
     @NonNull
     @Override
     public Fragment getItem(int position) {
-        return LibJumpHelper.getFragment(position == 0 ? CalendarLibs.FRAGMENT_HOME : UserLibs.FRAGMENT_USER);
+        return list.get(position);
 
     }
 

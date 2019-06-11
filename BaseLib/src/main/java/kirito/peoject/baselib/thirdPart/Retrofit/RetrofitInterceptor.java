@@ -1,5 +1,6 @@
 package kirito.peoject.baselib.thirdPart.Retrofit;
 
+import android.util.Log;
 import okhttp3.HttpUrl;
 import okhttp3.Interceptor;
 import okhttp3.Request;
@@ -52,6 +53,9 @@ public class RetrofitInterceptor implements Interceptor {
             headerMap.clear();
         }
         Request newRequest =builder.build();
+
+        Log.e("wangxu", newRequest.url().toString());
+
         return chain.proceed(newRequest);
 
     }

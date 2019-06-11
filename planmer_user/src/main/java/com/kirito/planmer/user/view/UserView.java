@@ -1,5 +1,6 @@
 package com.kirito.planmer.user.view;
 
+import android.widget.ImageView;
 import androidx.appcompat.app.AppCompatActivity;
 import com.kirito.planmer.user.R;
 import kirito.peoject.baselib.mvp.BaseV;
@@ -10,6 +11,8 @@ import kirito.peoject.baselib.mvp.BaseV;
  * @NOTE 类说明
  */
 public class UserView extends BaseV {
+    public ImageView mIvAvatar;
+
     public UserView(AppCompatActivity activity) {
         super(activity);
     }
@@ -21,6 +24,8 @@ public class UserView extends BaseV {
 
     @Override
     public void initView() {
+        barColor=R.color.app_color_light;
+        mIvAvatar = findViewById(R.id.ivAvatar);
 
     }
 }

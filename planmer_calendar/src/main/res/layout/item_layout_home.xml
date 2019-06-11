@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.kirito.planmer.calendar.view.widget.MySmartRefreshLayout
-        android:id="@+id/srlRefresh"
         xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/srlRefresh"
         android:orientation="vertical"
         android:background="@color/colorffffff"
         android:layout_width="match_parent"
@@ -62,92 +62,18 @@
         <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
                   android:textColor="@color/app_color_light"
                   android:textSize="13dp"
-                  android:text="下一时段要执行的任务"
+                  android:text="下一时段要执行的计划"
                   android:layout_marginLeft="10dp"
 
         />
-        <RelativeLayout
-                android:id="@+id/rlTaskBg"
+
+        <com.kirito.planmer.calendar.view.widget.TaskCardView
+
+                android:id="@+id/taskCardView"
+
                 android:layout_width="match_parent"
-                android:layout_margin="10dp"
-                android:background="@drawable/bg_card"
-                android:layout_height="wrap_content">
-            <RelativeLayout
+                                                              android:layout_height="wrap_content"/>
 
-
-                    android:id="@+id/rlStart"
-                    android:layout_width="60dp" android:layout_height="60dp"
-                    android:layout_centerVertical="true"
-                    android:layout_margin="10dp"
-            >
-                <ImageView
-                        android:id="@+id/btnTaskBg"
-                        android:background="@drawable/ic_task_bg"
-
-                        android:layout_width="60dp"
-                        android:layout_centerInParent="true"
-                        android:layout_height="60dp"/>
-
-                <ImageView
-                        android:id="@+id/btnStart"
-                        android:src="@drawable/btn_task_start"
-                        android:layout_width="wrap_content"
-                        android:layout_centerInParent="true"
-                        android:layout_height="wrap_content"/>
-
-            </RelativeLayout>
-            <TextView
-                    android:id="@+id/tvTask"
-                    android:layout_toRightOf="@+id/rlStart"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="@color/colorffffff"
-                    android:layout_toLeftOf="@+id/tvRemainingTime"
-                    android:textSize="16dp"
-                    android:text="任务名称"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"/>
-            <TextView
-                    android:id="@+id/tvRemainingTime"
-                    android:text="30m 30s"
-                    android:layout_marginRight="10dp"
-                    android:gravity="right"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginTop="10dp"
-                    android:textColor="@color/colorffffff"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-
-
-            />
-            <TextView
-                    android:id="@+id/tvTaskContent"
-                    android:layout_marginTop="5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_below="@+id/tvTask"
-                    android:textColor="@color/colorffffff"
-                    android:text="任务内容，我也不知道说啥"
-                    android:textSize="14dp"
-                    android:layout_toRightOf="@+id/rlStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-            <TextView
-                    android:id="@+id/tvTime"
-                    android:layout_marginTop="10dp"
-                    android:layout_below="@+id/tvTaskContent"
-                    android:textColor="@color/colorffffff"
-                    android:layout_marginLeft="10dp"
-
-                    android:text="19年6月23日-19年7月17日 每天30分"
-                    android:textSize="12dp"
-                    android:layout_marginBottom="10dp"
-                    android:layout_toRightOf="@+id/rlStart"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
-
-
-        </RelativeLayout>
         <RelativeLayout
                 android:id="@+id/rlNoTask"
                 android:layout_width="match_parent"
