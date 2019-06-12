@@ -4,12 +4,13 @@
                 android:layout_width="match_parent"
                 android:background="@color/colorffffff"
                 android:layout_height="match_parent">
+
     <TextView
-            android:id="@+id/tvLogin"
+            android:id="@+id/tvRegister"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="60dp"
             android:textColor="@color/app_color"
-            android:text="登录"
+            android:text="注册"
             android:textSize="40dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
@@ -21,7 +22,7 @@
 
             android:orientation="horizontal"
             android:background="@drawable/shape_edit_bg_normal"
-            android:layout_below="@+id/tvLogin"
+            android:layout_below="@+id/tvRegister"
             android:layout_width="match_parent"
             android:layout_height="50dp">
         <ImageView android:layout_width="40dp"
@@ -82,28 +83,95 @@
 
     </LinearLayout>
 
+    <LinearLayout
+            android:id="@+id/llRePassWord"
+
+            android:orientation="horizontal"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_edit_bg_normal"
+            android:layout_below="@+id/llPassWord"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <ImageView android:layout_width="40dp"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/ic_password"
+                   android:layout_margin="10dp"/>
+        <View android:layout_width="0.5dp" android:layout_height="match_parent"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              android:layout_marginRight="10dp"
+              android:background="@color/app_color"
+        />
+        <EditText
+                android:id="@+id/edtRePassWord"
+                android:layout_margin="5dp"
+                android:background="@color/colorffffffff"
+                android:textSize="15dp"
+                android:inputType="textPassword"
+                android:hint="请再次输入密码"
+                android:textColorHint="@color/app_color_light_text"
+                android:textColor="@color/app_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
+    <LinearLayout
+            android:id="@+id/llInvitationCode"
+
+            android:orientation="horizontal"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/shape_edit_bg_normal"
+            android:layout_below="@+id/llRePassWord"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+        <ImageView android:layout_width="40dp"
+                   android:layout_height="wrap_content"
+                   android:src="@mipmap/ic_invitation_code"
+                   android:layout_margin="10dp"/>
+        <View android:layout_width="0.5dp" android:layout_height="match_parent"
+              android:layout_marginTop="10dp"
+              android:layout_marginBottom="10dp"
+              android:layout_marginRight="10dp"
+              android:background="@color/app_color"
+        />
+        <EditText
+                android:id="@+id/edtInvitationCode"
+                android:layout_margin="5dp"
+                android:background="@color/colorffffffff"
+                android:textSize="15dp"
+                android:hint="请输入邀请码"
+                android:textColorHint="@color/app_color_light_text"
+                android:textColor="@color/app_text_color"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </LinearLayout>
     <TextView
-            android:id="@+id/tvLoginBtn"
+            android:id="@+id/tvRegisterBtn"
             android:textColor="@color/colorffffff"
             android:layout_marginRight="20dp"
-            android:text="登录"
+            android:text="注册"
             android:textSize="20dp"
             android:gravity="center"
             android:layout_marginLeft="20dp"
             android:background="@drawable/selector_btn_bg"
             android:layout_marginTop="50dp"
-            android:layout_below="@+id/llPassWord"
+            android:layout_below="@+id/llInvitationCode"
             android:layout_width="match_parent" android:layout_height="50dp"/>
 
 
     <TextView
-            android:id="@+id/tvToRegister"
+            android:id="@+id/tvToLogin"
             android:layout_width="90dp" android:layout_height="50dp"
-              android:text="去注册"
+              android:text="去登录"
               android:textSize="15dp"
               android:gravity="center"
               android:textColor="@color/app_color"
-              android:layout_below="@+id/tvLoginBtn"
+              android:layout_below="@+id/tvRegisterBtn"
               android:layout_margin="10dp"
               android:layout_alignParentRight="true"
     />

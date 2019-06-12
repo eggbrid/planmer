@@ -10,6 +10,7 @@
             android:layout_below="@+id/title"
             android:id="@+id/vp"
             android:layout_width="match_parent"
+            android:layout_above="@+id/bottomTab"
             android:layout_height="match_parent"
             android:orientation="horizontal"/>
 

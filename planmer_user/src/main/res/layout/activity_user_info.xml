@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <kirito.peoject.baselib.UI.widget.CommentTitleView
+            android:layout_width="match_parent"
+            android:id="@+id/title"
+            android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="头像"
+                android:textColor="@color/app_text_color"
+                android:textSize="15dp"
+                android:layout_centerVertical="true"
+        />
+        <ImageView
+                android:id="@+id/ivAvatar"
+                android:layout_width="40dp" android:layout_height="40dp"
+                android:background="@drawable/ic_defult_avatar"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+        />
+
+    </RelativeLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/app_normal_color"/>
+    <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:id="@+id/tvNickName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="昵称"
+                android:textColor="@color/app_text_color"
+                android:textSize="15dp"
+                android:layout_centerVertical="true"
+        />
+        <EditText
+                android:layout_toRightOf="@+id/tvNickName"
+                android:id="@+id/edtNickName"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@color/colorffffffff"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical"
+                android:hint="请输入您的昵称"
+                android:textSize="15dp"
+                android:textColorHint="@color/app_normal_color"
+                android:textColor="@color/app_color"
+                android:layout_centerVertical="true"
+        />
+
+    </RelativeLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/app_normal_color"/>
+    <RelativeLayout
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp">
+        <TextView
+                android:id="@+id/tvInvitationCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="邀请码"
+                android:textColor="@color/app_text_color"
+                android:textSize="15dp"
+                android:layout_centerVertical="true"
+        />
+        <TextView
+                android:layout_toRightOf="@+id/tvInvitationCode"
+                android:id="@+id/tvInvitationCodeValue"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:background="@color/colorffffffff"
+                android:layout_alignParentRight="true"
+                android:gravity="right|center_vertical"
+                android:textSize="15dp"
+                android:textColorHint="@color/app_normal_color"
+                android:textColor="@color/app_color"
+                android:layout_centerVertical="true"
+        />
+
+    </RelativeLayout>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/app_normal_color"/>
+    <RelativeLayout android:layout_width="match_parent" android:layout_height="match_parent">
+        <TextView
+                android:id="@+id/tvSave"
+                android:layout_width="match_parent" android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:layout_margin="10dp"
+                android:textColor="@color/colorffffff"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:background="@drawable/selector_btn_bg"
+                android:text="保存"/>
+
+    </RelativeLayout>
+</LinearLayout>

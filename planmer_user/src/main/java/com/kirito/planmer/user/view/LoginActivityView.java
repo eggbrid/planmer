@@ -22,6 +22,7 @@ public class LoginActivityView extends BaseV {
     public TextView tvLoginBtn;
     public EditText edtUserName;
     public EditText edtPassWord;
+    public TextView tvToRegister;
 
     @Override
     public int setViewLayout() {
@@ -34,7 +35,7 @@ public class LoginActivityView extends BaseV {
         edtPassWord = findViewById(R.id.edtPassWord);
         tvLogin = findViewById(R.id.tvLogin);
         tvLoginBtn = findViewById(R.id.tvLoginBtn);
-
+        tvToRegister= findViewById(R.id.tvToRegister);
         Typeface typeface = ResourcesCompat.getFont(activity, R.font.cat);
         tvLogin.setTypeface(typeface);
     }

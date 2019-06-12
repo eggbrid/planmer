@@ -11,8 +11,16 @@ public class User extends BaseM {
     private String id;
     private String userName;
     private String passWord;
-
+    private String invitationCode;
     private String token;
+
+    public String getInvitationCode() {
+        return invitationCode;
+    }
+
+    public void setInvitationCode(String invitationCode) {
+        this.invitationCode = invitationCode;
+    }
 
     public String getToken() {
         return token;
