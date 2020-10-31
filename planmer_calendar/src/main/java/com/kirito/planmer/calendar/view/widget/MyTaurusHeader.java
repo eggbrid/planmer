@@ -150,7 +150,7 @@ public class MyTaurusHeader extends InternalAbstract implements RefreshHeader {
         //<editor-fold desc="setupPathDrawable">
         PathsDrawable airplane = new PathsDrawable();
         if (!airplane.parserPaths(airplanePaths)) {
-            airplane.declareOriginal(3, 3, 257, 220);
+            airplane.declareOriginal(0, 0, SmartUtil.dp2px(520), SmartUtil.dp2px(440));
         }
 //        airplane.printOriginal("airplane");
         airplane.parserColors(airplaneColors);
