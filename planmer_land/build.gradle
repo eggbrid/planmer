@@ -1,21 +1,21 @@
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
 
 android {
     compileSdkVersion 28
 
 
     defaultConfig {
-        applicationId "com.kirito.planmer"
         minSdkVersion 23
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         javaCompileOptions {
             annotationProcessorOptions {
                 arguments = [AROUTER_MODULE_NAME: project.getName()]
             }
         }
-
     }
 
     buildTypes {
@@ -29,18 +29,18 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation project(path: ':BaseLib')
+
     implementation 'androidx.appcompat:appcompat:1.0.2'
-    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha02'
-    implementation project(path: ':planmer_user')
-    implementation project(path: ':planmer_calendar')
-    implementation project(path: ':planmer_land')
-    implementation 'com.facebook.shimmer:shimmer:0.4.0'
-// 基础依赖包，必须要依赖
-    implementation 'com.gyf.immersionbar:immersionbar:3.0.0-beta03'
-// fragment快速实现（可选）
-    implementation 'com.gyf.immersionbar:immersionbar-components:3.0.0-beta03'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
+    implementation project(path: ':BaseLib')
+    implementation project(path: ':ConstantLibs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
+    implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
+    implementation 'com.manolovn:trianglify:1.1.0'
+    implementation 'com.moxun:tagcloudlib:1.2.0'
+
 
 
 }

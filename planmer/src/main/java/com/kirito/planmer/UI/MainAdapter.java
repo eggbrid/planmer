@@ -6,6 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.adapter.FragmentStateAdapter;
 import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
 import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
+import kirito.peoject.constantlibs.UIConstant.activity.LandLibs;
 import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
 
 import java.util.ArrayList;
@@ -20,7 +21,7 @@ public class MainAdapter extends FragmentStateAdapter {
     List<Fragment> list=new ArrayList<>();
     public MainAdapter(@NonNull FragmentManager fragmentManager) {
         super(fragmentManager);
-        list.add(LibJumpHelper.getFragment(CalendarLibs.FRAGMENT_HOME ));
+        list.add(LibJumpHelper.getFragment(LandLibs.FRAGMENT_HOME ));
         list.add(LibJumpHelper.getFragment( UserLibs.FRAGMENT_USER));
 
     }

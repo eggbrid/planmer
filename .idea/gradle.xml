@@ -14,6 +14,7 @@
             <option value="$PROJECT_DIR$/ConstantLibs" />
             <option value="$PROJECT_DIR$/planmer" />
             <option value="$PROJECT_DIR$/planmer_calendar" />
+            <option value="$PROJECT_DIR$/planmer_land" />
             <option value="$PROJECT_DIR$/planmer_user" />
             <option value="$PROJECT_DIR$/testlibs" />
           </set>
