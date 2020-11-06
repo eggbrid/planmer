@@ -1,98 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:background="@color/black"
         android:layout_height="match_parent">
 
+    <kirito.peoject.baselib.UI.widget.BackgroundView
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            android:layout_height="match_parent" />
 
     <androidx.viewpager2.widget.ViewPager2
-            android:layout_below="@+id/title"
             android:id="@+id/vp"
             android:layout_width="match_parent"
-            android:layout_above="@+id/bottomTab"
             android:layout_height="match_parent"
-            android:orientation="horizontal"/>
-
+            android:layout_above="@+id/bottomTab"
+            android:layout_below="@+id/title"
+            android:orientation="horizontal" />
 
 
     <RadioGroup
-            android:visibility="gone"
-            android:layout_alignParentBottom="true"
             android:id="@+id/bottomTab"
             android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_alignParentBottom="true"
             android:background="@color/colorffffff"
-            android:orientation="horizontal"
             android:gravity="bottom"
-            android:layout_height="60dp">
+            android:orientation="horizontal"
+            android:visibility="gone">
+
         <RadioButton
                 android:id="@+id/Home"
-                android:text="首页"
-                android:layout_weight="1"
-                android:layout_marginRight="60dp"
-                android:layout_gravity="center_vertical"
-                android:button="@null"
-                android:textColor="@color/home_selected_color"
-                android:gravity="center"
-                android:drawableTop="@drawable/ic_home_calander"
-                android:background="@null"
-                android:checked="true"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginRight="60dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/ic_home_calander"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@color/home_selected_color" />
 
         <RadioButton
                 android:id="@+id/user"
-                android:text="我的"
-                android:layout_marginLeft="60dp"
-                android:button="@null"
-                android:textColor="@color/home_selected_color"
-                android:layout_weight="1"
-                android:gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="60dp"
+                android:layout_weight="1"
+                android:background="@null"
+                android:button="@null"
 
                 android:drawableTop="@drawable/ic_home_user"
-                android:background="@null"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@color/home_selected_color" />
     </RadioGroup>
+
     <LinearLayout
-            android:visibility="gone"
             android:id="@+id/llAdd"
             android:layout_width="wrap_content"
-                  android:layout_centerHorizontal="true"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
             android:orientation="vertical"
-                  android:layout_alignParentBottom="true"
 
-            android:layout_height="wrap_content">
+            android:visibility="gone">
 
         <TextView
                 android:id="@+id/Add"
-                android:button="@null"
-                android:textColor="@color/home_selected_color"
-                android:drawableTop="@drawable/selector_ic_home_add"
-                android:checked="true"
-                android:text="添加计划"
-android:drawablePadding="10dp"
-                android:layout_marginBottom="5dp"
-                android:gravity="bottom|center_horizontal"
                 android:layout_width="wrap_content"
-                android:textSize="12dp"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="5dp"
+                android:button="@null"
+                android:checked="true"
+                android:drawableTop="@drawable/selector_ic_home_add"
+                android:drawablePadding="10dp"
+                android:gravity="bottom|center_horizontal"
+                android:text="添加计划"
+                android:textColor="@color/home_selected_color"
+                android:textSize="12dp" />
     </LinearLayout>
+
     <View
             android:id="@+id/bottomLineLeft"
-            android:visibility="gone"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
             android:layout_above="@+id/bottomTab"
             android:layout_toLeftOf="@+id/llAdd"
+            android:background="@color/app_normal_color"
+            android:visibility="gone" />
+
+    <View
+            android:id="@+id/bottomLineRight"
             android:layout_width="match_parent"
             android:layout_height="0.5dp"
-            android:background="@color/app_normal_color"/>
-    <View
-            android:visibility="gone"
-            android:id="@+id/bottomLineRight"
             android:layout_above="@+id/bottomTab"
             android:layout_toRightOf="@+id/llAdd"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"
-            android:background="@color/app_normal_color"/>
+            android:background="@color/app_normal_color"
+            android:visibility="gone" />
 </RelativeLayout>

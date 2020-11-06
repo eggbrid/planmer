@@ -2,6 +2,9 @@ package com.kirito.planmer.UI;
 
 import android.os.Handler;
 import android.text.TextUtils;
+
+import com.gyf.immersionbar.BarHide;
+import com.gyf.immersionbar.ImmersionBar;
 import com.kirito.planmer.PlanmerApplication;
 import kirito.peoject.baselib.UI.BaseActivity;
 import kirito.peoject.baselib.thirdPart.ARouter.LibJumpHelper;
@@ -16,6 +19,12 @@ import kirito.peoject.constantlibs.UIConstant.activity.UserLibs;
  */
 public class SplashActivity extends BaseActivity<SplashActivityView> {
     @Override
+    public void initImmersionBar() {
+        ImmersionBar immersionBar = ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR);
+        immersionBar.init();
+    }
+
+    @Override
     public void afterInitView(SplashActivityView v) {
         super.afterInitView(v);
         long startDtime=System.currentTimeMillis()-PlanmerApplication.startTime;
@@ -25,19 +34,20 @@ public class SplashActivity extends BaseActivity<SplashActivityView> {
             go();
             finish();
         }else {
+            go();
+            finish();
+//                v.shimmer_view_container.startShimmer();
 
-                v.shimmer_view_container.startShimmer();
-
-            new Handler().postDelayed(new Runnable() {
-                @Override
-                public void run() {
+//            new Handler().postDelayed(new Runnable() {
+//                @Override
+//                public void run() {
 //                    IntentUtil.startActivity(SplashActivity.this,MainActivity.class);
+//
+//                    go();
+//                    finish();
 
-                    go();
-                    finish();
-
-                }
-            },2000);
+//                }
+//            },2000);
         }
 
     }

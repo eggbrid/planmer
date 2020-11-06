@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel>
+    <bytecodeTargetLevel target="1.7">
       <module name="ConstantLibs" target="1.7" />
+      <module name="planmer.BaseLib" target="1.8" />
+      <module name="planmer.planmer" target="1.8" />
+      <module name="planmer.planmer_calendar" target="1.8" />
+      <module name="planmer.planmer_land" target="1.8" />
+      <module name="planmer.planmer_user" target="1.8" />
+      <module name="planmer.testlibs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

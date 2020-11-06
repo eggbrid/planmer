@@ -5,6 +5,8 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import androidx.viewpager2.widget.ViewPager2;
 import com.alibaba.android.arouter.facade.annotation.Route;
+import com.gyf.immersionbar.BarHide;
+import com.gyf.immersionbar.ImmersionBar;
 
 import kirito.peoject.baselib.UI.BaseActivity;
 import kirito.peoject.baselib.UI.BaseFragment;
@@ -18,6 +20,11 @@ import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
 public class MainActivity extends BaseActivity<MainView> {
 
     private MainAdapter mainAdapter;
+    @Override
+    public void initImmersionBar() {
+        ImmersionBar immersionBar = ImmersionBar.with(this).hideBar(BarHide.FLAG_HIDE_BAR);
+        immersionBar.init();
+    }
 
     @Override
     public void afterInitView(final MainView v) {

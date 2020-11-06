@@ -76,7 +76,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
     int maLightLocationHandle;//光源位置属性引用
     int maNormalHandle; //顶点法向量属性引用
 
-    private static final float LIGHT[]={2.0f,10f, 0f};
+    private static final float LIGHT[]={2.0f,-10f, 0f};
     private static final float CAMERA[]={0.0f, 0f, 3f};
 //    private FloatBuffer fbCamera;
 //    int maCameraHandle;//相机位置属性引用
@@ -211,7 +211,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
         //TODO 添加相机引用
 //        maCameraHandle=GLES20.glGetUniformLocation(mProgram, "uCamera");
         //加载纹理
-        textureId = loadTexture(context, R.drawable.er);
+        textureId = loadTexture(context, R.drawable.ass);
     }
 
     @Override
@@ -279,7 +279,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
         }else if (x>=1){
             x=x-1;
         }else if (x<1&&x>=0||x<=0&&x>-1){
-            x=0.01f;
+            x=0.05f;
         }
 
 

@@ -3,12 +3,15 @@
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
-        <item name="colorPrimary">@color/colorffffff</item>
-        <item name="colorPrimaryDark">@color/app_normal_color</item>
-        <item name="colorAccent">@color/app_color</item>
+        <item name="colorPrimary">@color/black</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/black</item>
     </style>
-<style name="Splash" parent="AppTheme">
-<item name="android:windowFullscreen">true</item>
-    <item name="android:windowBackground">@drawable/pic_splash_l</item>
-</style>
+
+    <style name="Splash" parent="AppTheme">
+        <item name="android:windowNoTitle">true</item>
+
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowBackground">@mipmap/bg</item>
+    </style>
 </resources>

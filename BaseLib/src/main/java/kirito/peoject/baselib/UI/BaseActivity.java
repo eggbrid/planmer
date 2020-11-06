@@ -72,17 +72,21 @@ public abstract class BaseActivity<V extends BaseV> extends AppCompatActivity im
             e.printStackTrace();
         }
         setContentView(view.setViewLayout());
+        initImmersionBar();
+        view.initView();
+        afterInitView(view);
+        initData();
+    }
+
+    public void initImmersionBar(){
         ImmersionBar immersionBar= ImmersionBar.with(this).reset()
-                 .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
+                .statusBarDarkFont(true)   //状态栏字体是深色，不写默认为亮色
                 .navigationBarDarkIcon(true)
-                .barColor(R.color.colorffffff).fullScreen(!view.isShowBar()).fitsSystemWindows(true);
+                .barColor(R.color.black).fullScreen(!view.isShowBar()).fitsSystemWindows(true);
         if (!view.isShowBar()) {
             immersionBar.hideBar(BarHide.FLAG_HIDE_BAR);
         }
         immersionBar.init();
-        view.initView();
-        afterInitView(view);
-        initData();
     }
 
 

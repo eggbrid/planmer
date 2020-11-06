@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:background="@color/colorffffff"
+                android:background="@color/black"
                 android:layout_height="match_parent">
 
     <TextView
@@ -11,7 +11,7 @@
             android:layout_marginTop="60dp"
             android:textColor="@color/app_color"
             android:text="注册"
-            android:textSize="40dp"
+            android:textSize="20dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"/>
     <LinearLayout
@@ -25,17 +25,17 @@
             android:layout_below="@+id/tvRegister"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-        <ImageView android:layout_width="40dp"
-                   android:layout_height="wrap_content"
-                   android:src="@mipmap/ic_username"
-                   android:layout_margin="10dp"/>
-        <View android:layout_width="0.5dp"
-              android:layout_height="match_parent"
-              android:layout_marginTop="10dp"
-              android:layout_marginBottom="10dp"
-              android:layout_marginRight="10dp"
-              android:background="@color/app_color"
-        />
+<!--        <ImageView android:layout_width="40dp"-->
+<!--                   android:layout_height="wrap_content"-->
+<!--                   android:src="@mipmap/ic_username"-->
+<!--                   android:layout_margin="10dp"/>-->
+<!--        <View android:layout_width="0.5dp"-->
+<!--              android:layout_height="match_parent"-->
+<!--              android:layout_marginTop="10dp"-->
+<!--              android:layout_marginBottom="10dp"-->
+<!--              android:layout_marginRight="10dp"-->
+<!--              android:background="@color/app_color"-->
+<!--        />-->
         <EditText
                 android:id="@+id/edtUserName"
                 android:layout_margin="5dp"
@@ -59,16 +59,16 @@
             android:layout_below="@+id/llUserName"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-        <ImageView android:layout_width="40dp"
-                   android:layout_height="wrap_content"
-                   android:src="@mipmap/ic_password"
-                   android:layout_margin="10dp"/>
-        <View android:layout_width="0.5dp" android:layout_height="match_parent"
-              android:layout_marginTop="10dp"
-              android:layout_marginBottom="10dp"
-              android:layout_marginRight="10dp"
-              android:background="@color/app_color"
-        />
+<!--        <ImageView android:layout_width="40dp"-->
+<!--                   android:layout_height="wrap_content"-->
+<!--                   android:src="@mipmap/ic_password"-->
+<!--                   android:layout_margin="10dp"/>-->
+<!--        <View android:layout_width="0.5dp" android:layout_height="match_parent"-->
+<!--              android:layout_marginTop="10dp"-->
+<!--              android:layout_marginBottom="10dp"-->
+<!--              android:layout_marginRight="10dp"-->
+<!--              android:background="@color/app_color"-->
+<!--        />-->
         <EditText
                 android:id="@+id/edtPassWord"
                 android:layout_margin="5dp"
@@ -94,16 +94,16 @@
             android:layout_below="@+id/llPassWord"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-        <ImageView android:layout_width="40dp"
-                   android:layout_height="wrap_content"
-                   android:src="@mipmap/ic_password"
-                   android:layout_margin="10dp"/>
-        <View android:layout_width="0.5dp" android:layout_height="match_parent"
-              android:layout_marginTop="10dp"
-              android:layout_marginBottom="10dp"
-              android:layout_marginRight="10dp"
-              android:background="@color/app_color"
-        />
+<!--        <ImageView android:layout_width="40dp"-->
+<!--                   android:layout_height="wrap_content"-->
+<!--                   android:src="@mipmap/ic_password"-->
+<!--                   android:layout_margin="10dp"/>-->
+<!--        <View android:layout_width="0.5dp" android:layout_height="match_parent"-->
+<!--              android:layout_marginTop="10dp"-->
+<!--              android:layout_marginBottom="10dp"-->
+<!--              android:layout_marginRight="10dp"-->
+<!--              android:background="@color/app_color"-->
+<!--        />-->
         <EditText
                 android:id="@+id/edtRePassWord"
                 android:layout_margin="5dp"
@@ -128,16 +128,16 @@
             android:layout_below="@+id/llRePassWord"
             android:layout_width="match_parent"
             android:layout_height="50dp">
-        <ImageView android:layout_width="40dp"
-                   android:layout_height="wrap_content"
-                   android:src="@mipmap/ic_invitation_code"
-                   android:layout_margin="10dp"/>
-        <View android:layout_width="0.5dp" android:layout_height="match_parent"
-              android:layout_marginTop="10dp"
-              android:layout_marginBottom="10dp"
-              android:layout_marginRight="10dp"
-              android:background="@color/app_color"
-        />
+<!--        <ImageView android:layout_width="40dp"-->
+<!--                   android:layout_height="wrap_content"-->
+<!--                   android:src="@mipmap/ic_invitation_code"-->
+<!--                   android:layout_margin="10dp"/>-->
+<!--        <View android:layout_width="0.5dp" android:layout_height="match_parent"-->
+<!--              android:layout_marginTop="10dp"-->
+<!--              android:layout_marginBottom="10dp"-->
+<!--              android:layout_marginRight="10dp"-->
+<!--              android:background="@color/app_color"-->
+<!--        />-->
         <EditText
                 android:id="@+id/edtInvitationCode"
                 android:layout_margin="5dp"
@@ -152,10 +152,10 @@
     </LinearLayout>
     <TextView
             android:id="@+id/tvRegisterBtn"
-            android:textColor="@color/colorffffff"
+            android:textColor="@color/app_text_color"
             android:layout_marginRight="20dp"
             android:text="注册"
-            android:textSize="20dp"
+            android:textSize="18dp"
             android:gravity="center"
             android:layout_marginLeft="20dp"
             android:background="@drawable/selector_btn_bg"
