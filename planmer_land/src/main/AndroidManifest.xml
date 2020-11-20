@@ -4,6 +4,11 @@
 
     <application>
 
+            <activity android:name=".activity.StartActivity"
+                    android:screenOrientation="portrait">
+
+            </activity>
+
 
     </application>
 

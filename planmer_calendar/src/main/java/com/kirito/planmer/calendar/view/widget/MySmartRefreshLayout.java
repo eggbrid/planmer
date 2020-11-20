@@ -5,7 +5,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+
 import com.scwang.smartrefresh.layout.SmartRefreshLayout;
+
 import kirito.peoject.baselib.util.LogUtils;
 
 /**
@@ -28,9 +31,6 @@ public class MySmartRefreshLayout extends SmartRefreshLayout {
         super(context, attrs);
     }
 
-    public MySmartRefreshLayout(Context context, AttributeSet attrs, int defStyleAttr) {
-        super(context, attrs, defStyleAttr);
-    }
 
 
     @Override

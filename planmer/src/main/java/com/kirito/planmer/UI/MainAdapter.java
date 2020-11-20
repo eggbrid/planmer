@@ -21,7 +21,7 @@ public class MainAdapter extends FragmentStateAdapter {
     List<Fragment> list=new ArrayList<>();
     public MainAdapter(@NonNull FragmentManager fragmentManager) {
         super(fragmentManager);
-        list.add(LibJumpHelper.getFragment(LandLibs.FRAGMENT_HOME ));
+        list.add(LibJumpHelper.getFragment(CalendarLibs.FRAGMENT_HOME ));
         list.add(LibJumpHelper.getFragment( UserLibs.FRAGMENT_USER));
 
     }

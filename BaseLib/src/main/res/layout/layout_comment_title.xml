@@ -1,64 +1,68 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="60dp">
-    <View
-            android:layout_alignParentTop="true"
-            android:background="@color/app_normal_color"
-            android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/app_color"
+        android:orientation="horizontal">
+
+
     <LinearLayout
-            android:orientation="horizontal"
             android:layout_width="match_parent"
-            android:layout_height="60dp">
+            android:layout_height="60dp"
+            android:orientation="horizontal">
+
         <RelativeLayout
                 android:id="@+id/rlLeft"
                 android:layout_width="0dp"
-                android:layout_weight=".3"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight=".3">
+
             <ImageView
                     android:id="@+id/ivLeft"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:padding="15dp"
                     android:scaleType="fitStart"
-                    android:src="@drawable/ic_back"
-                    android:layout_height="match_parent"/>
+                    android:src="@drawable/ic_back" />
 
         </RelativeLayout>
+
         <RelativeLayout
                 android:id="@+id/rlTitle"
                 android:layout_width="0dp"
-                android:layout_weight="1"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
             <TextView
                     android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:gravity="center"
                     android:text="标题"
-                    android:textSize="20dp"
                     android:textColor="@color/app_text_color"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"/>
+                    android:textSize="20dp" />
         </RelativeLayout>
 
         <RelativeLayout
                 android:id="@+id/rlRight"
                 android:layout_width="0dp"
-                android:layout_weight=".3"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_weight=".3">
+
             <ImageView
                     android:id="@+id/ivRight"
                     android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:padding="15dp"
-                    android:scaleType="fitEnd"
-                    android:layout_height="match_parent"/>
+                    android:scaleType="fitEnd" />
 
         </RelativeLayout>
 
     </LinearLayout>
-    <View 
-            android:layout_alignParentBottom="true"
-            android:background="@color/app_normal_color"
+
+    <View
             android:layout_width="match_parent"
-            android:layout_height="0.5dp"/>
+            android:layout_height="0.5dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/app_normal_color" />
 </RelativeLayout>

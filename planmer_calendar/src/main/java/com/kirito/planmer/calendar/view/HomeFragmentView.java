@@ -2,7 +2,9 @@ package com.kirito.planmer.calendar.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
+
 import com.kirito.planmer.calendar.R;
+
 import kirito.peoject.baselib.UI.widget.CommentTitleView;
 import kirito.peoject.baselib.mvp.BaseV;
 
@@ -13,7 +15,6 @@ import kirito.peoject.baselib.mvp.BaseV;
  */
 public class HomeFragmentView extends BaseV {
     public ViewPager2 mVp;
-    public CommentTitleView title ;
 
     public HomeFragmentView(AppCompatActivity activity) {
         super(activity);
@@ -27,8 +28,5 @@ public class HomeFragmentView extends BaseV {
     @Override
     public void initView() {
         mVp = findViewById(R.id.vp);
-        title=findViewById(R.id.title);
-        title.setOnlyTitle("首页");
-
     }
 }

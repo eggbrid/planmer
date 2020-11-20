@@ -11,5 +11,7 @@ package kirito.peoject.constantlibs.UIConstant.activity;
  */
 public class LandLibs {
     public final static String FRAGMENT_HOME ="/LandLibs/fragment/home";
+    public final static String ACTIVITY_START ="/LandLibs/activity/start";
+
 
 }

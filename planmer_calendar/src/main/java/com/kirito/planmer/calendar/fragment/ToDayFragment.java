@@ -1,34 +1,23 @@
 package com.kirito.planmer.calendar.fragment;
 
-import android.graphics.Color;
 import android.os.CountDownTimer;
-import android.util.Log;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.LinearInterpolator;
-import android.view.animation.RotateAnimation;
+
 import androidx.annotation.NonNull;
-import com.alibaba.android.arouter.facade.annotation.Route;
-import com.kirito.planmer.calendar.R;
+
 import com.kirito.planmer.calendar.activity.AddTaskActivity;
 import com.kirito.planmer.calendar.presenter.SignP;
 import com.kirito.planmer.calendar.presenter.TaskP;
-import com.kirito.planmer.calendar.view.widget.MyTaurusHeader;
+import com.kirito.planmer.calendar.view.widget.MyBezierCircleHeader;
 import com.kirito.planmer.calendar.view.widget.TaskCardView;
 import com.kirito.planmer.calendar.view.widget.ToDayFragmentView;
-import com.scwang.smartrefresh.header.*;
-import com.scwang.smartrefresh.layout.api.RefreshLayout;
-import com.scwang.smartrefresh.layout.header.ClassicsHeader;
-import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
-import com.study.xuan.shapebuilder.shape.ShapeBuilder;
-import kirito.peoject.baselib.UI.BaseFragment;
-import kirito.peoject.baselib.mvp.BaseP;
-import kirito.peoject.baselib.util.IntentUtil;
-import kirito.peoject.baselib.util.SizeUtils;
-import kirito.peoject.baselib.util.ThreadUtils;
-import kirito.peoject.constantlibs.UIConstant.activity.CalendarLibs;
 
-import static android.graphics.drawable.GradientDrawable.RECTANGLE;
+import com.scwang.smartrefresh.header.BezierCircleHeader;
+import com.scwang.smartrefresh.layout.api.RefreshLayout;
+import com.scwang.smartrefresh.layout.listener.OnRefreshListener;
+
+import kirito.peoject.baselib.UI.BaseFragment;
+import kirito.peoject.baselib.util.IntentUtil;
 
 /**
  * @auther kirito
@@ -54,9 +43,10 @@ public class ToDayFragment extends BaseFragment<ToDayFragmentView> implements Vi
             @Override
             public void onRefresh(@NonNull RefreshLayout refreshLayout) {
                 getData();
+
             }
         });
-        view.srlRefresh.setRefreshHeader(new MyTaurusHeader(activity));
+        view.srlRefresh.setRefreshHeader(new MyBezierCircleHeader(activity));
         getData();
 
     }

@@ -49,8 +49,8 @@ dependencies {
     api 'com.github.ybq:Android-SpinKit:1.2.0'
     api 'com.github.sdfdzx:SupperShape:v1.0.2'
     api 'com.contrarywind:Android-PickerView:4.1.8'
-    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.0-alpha-28'
-    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.0-alpha-28'//没有使用特殊Header，可以不加这行
+    api 'com.scwang.smartrefresh:SmartRefreshLayout:1.1.2'  //1.0.5及以前版本的老用户升级需谨慎，API改动过大
+    api 'com.scwang.smartrefresh:SmartRefreshHeader:1.1.2'  //没有使用特殊Header，可以不加这行
     api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
 
     api 'org.greenrobot:eventbus:3.1.1'

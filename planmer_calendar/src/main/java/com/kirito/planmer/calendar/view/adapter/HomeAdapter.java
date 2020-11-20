@@ -31,6 +31,6 @@ public class HomeAdapter extends FragmentStateAdapter {
 
     @Override
     public int getItemCount() {
-        return 2;
+        return 1;
     }
 }

@@ -16,7 +16,7 @@ public abstract class BaseV {
     protected AppCompatActivity activity;
     protected View fragmentView;
     LoadingDialog loadingDialog;
-    protected int barColor= R.color.colorffffff;
+    protected int barColor= R.color.black;
 
     public int getBarColor() {
         return barColor;

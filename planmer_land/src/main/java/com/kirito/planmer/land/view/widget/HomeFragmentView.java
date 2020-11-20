@@ -1,22 +1,15 @@
-package com.kirito.planmer.land.view;
+package com.kirito.planmer.land.view.widget;
 
-import android.content.Context;
-import android.graphics.Color;
-import android.graphics.PixelFormat;
-import android.view.View;
-import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.kirito.planmer.land.R;
-import com.moxun.tagcloudlib.view.TagCloudView;
-import com.moxun.tagcloudlib.view.TagsAdapter;
+import com.kirito.planmer.land.view.OpenGLView;
 
-import java.util.Random;
-
-import kirito.peoject.baselib.UI.widget.CommentTitleView;
 import kirito.peoject.baselib.mvp.BaseV;
+
+//import com.moxun.tagcloudlib.view.TagCloudView;
 
 /**
  * @auther kirito

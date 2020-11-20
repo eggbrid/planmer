@@ -72,7 +72,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
     private final float[] mProjectMatrix = new float[16];
 
     private final float[] mModelMatrix = new float[16];
-    private float x = 0f;
+    private float x = 0.5f;
     int maLightLocationHandle;//光源位置属性引用
     int maNormalHandle; //顶点法向量属性引用
 
@@ -239,6 +239,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
 
     public void rotate(float x) {
         this.x = x;
+        Log.e("wangxu","asdasdasdas    x="+x);
     }
 
     @Override
@@ -279,7 +280,7 @@ public class EarthMapRenderer2 implements GLSurfaceView.Renderer {
         }else if (x>=1){
             x=x-1;
         }else if (x<1&&x>=0||x<=0&&x>-1){
-            x=0.05f;
+            x=0.5f;
         }
 
 

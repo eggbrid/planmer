@@ -6,6 +6,7 @@ import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.opengl.GLSurfaceView;
+import android.util.Log;
 import android.view.MotionEvent;
 
 /**
@@ -19,21 +20,22 @@ import android.view.MotionEvent;
 public class OpenGLView extends GLSurfaceView {
 
     private EarthMapRenderer2 mRenderer;
-//private Render mRenderer;
+    //private Render mRenderer;
     private float mDownX = 0.0f;
     private float mDownY = 0.0f;
 
     public OpenGLView(Context context) {
         super(context);
         setEGLContextClientVersion(2);
-
-        setEGLConfigChooser(8, 8, 8, 8, 16, 0);
-        getHolder().setFormat(PixelFormat.TRANSLUCENT);
         setZOrderOnTop(true);
+        setEGLConfigChooser(8, 8, 8, 8, 16, 0);
+        getHolder().setFormat(PixelFormat.RGBA_8888);
 //        setBackgroundColor(Color.argb(0,0,0,0));
         mRenderer = new EarthMapRenderer2(context);
 //        mRenderer=new Render(context);
         this.setRenderer(mRenderer);
+        setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+
 
 
     }
@@ -51,7 +53,7 @@ public class OpenGLView extends GLSurfaceView {
             case MotionEvent.ACTION_MOVE:
                 float mX = event.getX();
                 float mY = event.getY();
-                mRenderer.rotate((mDownX-mX)/10  );
+                mRenderer.rotate((mDownX - mX) / 10f);
 
 //                mRenderer.mLightX += (mX - mDownX) / 10;
 //                mRenderer.mLightY -= (mY - mDownY) / 10;

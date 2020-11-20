@@ -38,8 +38,6 @@ dependencies {
     implementation project(path: ':ConstantLibs')
     annotationProcessor 'com.alibaba:arouter-compiler:1.2.2'
     implementation 'androidx.viewpager2:viewpager2:1.0.0-alpha01'
-    implementation 'com.manolovn:trianglify:1.1.0'
-    implementation 'com.moxun:tagcloudlib:1.2.0'
 
 
 

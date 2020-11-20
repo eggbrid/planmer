@@ -1,103 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.kirito.planmer.calendar.view.widget.MySmartRefreshLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+<com.kirito.planmer.calendar.view.widget.MySmartRefreshLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/srlRefresh"
-        android:orientation="vertical"
-        android:background="@color/colorffffff"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:orientation="vertical"
-                  android:background="@color/colorffffff"
-                  android:layout_width="match_parent"
-                  android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/app_bg_color"
+        android:orientation="vertical">
 
-        <RelativeLayout android:layout_width="match_parent" android:layout_height="wrap_content"
-                        android:layout_margin="10dp">
+    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp">
+
             <TextView
                     android:id="@+id/tvSign"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="您已连续签到"
-                    android:textSize="14dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
+                    android:text="您已连续签到"
                     android:textColor="@color/app_text_color"
-            />
+                    android:textSize="14dp" />
+
             <TextView
                     android:id="@+id/tvDay"
-                    android:layout_toRightOf="@+id/tvSign"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_gravity="center_vertical"
                     android:layout_marginLeft="5dp"
                     android:layout_marginRight="5dp"
-                    android:layout_gravity="center_vertical"
-                    android:layout_centerVertical="true"
-                    android:textSize="25dp"
+                    android:layout_toRightOf="@+id/tvSign"
+                    android:text="0"
                     android:textColor="@color/app_color"
-            />
+                    android:textSize="25dp" />
+
             <TextView
-                    android:layout_toRightOf="@+id/tvDay" android:layout_width="wrap_content"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="天"
                     android:layout_centerVertical="true"
-                    android:textSize="14dp"
+                    android:layout_toRightOf="@+id/tvDay"
+                    android:text="天"
                     android:textColor="@color/app_text_color"
-            />
+                    android:textSize="14dp" />
+
             <TextView
                     android:id="@+id/tvBtnSign"
-                    android:layout_width="wrap_content" android:layout_height="wrap_content"
-                    android:text="签到"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/selector_btn_bg"
-                    android:textColor="@color/colorffffff"
-                    android:padding="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
                     android:layout_gravity="center_vertical|right"
-            />
+                    android:background="@drawable/selector_btn_bg"
+                    android:padding="10dp"
+                    android:text="签到"
+                    android:textColor="@color/app_normal_color" />
         </RelativeLayout>
+
         <View
+                android:layout_width="match_parent"
+
+                android:layout_height="0.5dp"
                 android:layout_margin="5dp"
+                android:background="@color/app_normal_color" />
 
-                android:layout_width="match_parent" android:layout_height="0.5dp"
-                android:background="@color/app_normal_color"/>
-        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
-                  android:textColor="@color/app_color_light"
-                  android:textSize="13dp"
-                  android:text="下一时段要执行的计划"
-                  android:layout_marginLeft="10dp"
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="下一时段要执行的计划"
+                android:textColor="@color/app_color_light"
+                android:textSize="13dp"
 
-        />
+                />
 
         <com.kirito.planmer.calendar.view.widget.TaskCardView
 
                 android:id="@+id/taskCardView"
 
                 android:layout_width="match_parent"
-                                                              android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content" />
 
         <RelativeLayout
                 android:id="@+id/rlNoTask"
                 android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_margin="10dp"
-                android:background="@drawable/shape_edit_bg_normal"
-                android:layout_height="wrap_content">
+                android:background="@drawable/shape_edit_bg_normal">
+
             <ImageView
                     android:id="@+id/ivNoTask"
 
-                    android:layout_width="60dp" android:layout_height="60dp"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/ic_error"
                     android:layout_margin="10dp"
-            />
-            <TextView android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:src="@drawable/ic_error" />
 
-                      android:textSize="15dp"
-                      android:textColor="@color/app_color"
-                      android:text="暂无计划哦～\n点击这里去添加吧"
-                      android:gravity="center"
-                      android:layout_toRightOf="@+id/ivNoTask"
-                      android:layout_centerVertical="true"
-                      android:layout_centerHorizontal="true"
-            />
+            <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/ivNoTask"
+                    android:gravity="center"
+                    android:text="暂无计划哦～\n点击这里去添加吧"
+                    android:textColor="@color/app_color"
+                    android:textSize="15dp" />
 
 
         </RelativeLayout>
